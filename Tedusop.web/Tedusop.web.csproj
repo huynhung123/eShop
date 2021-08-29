@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
     <IISExpressSSLPort>44307</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -189,7 +189,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -206,6 +206,92 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.js" />
+    <Content Include="App\Components\Home\HomeController.js" />
+    <Content Include="App\Components\Home\HomeView.html" />
+    <Content Include="App\Components\product\Product.modul.js" />
+    <Content Include="App\Components\product\ProductAddController.js" />
+    <Content Include="App\Components\product\ProductAddView.html" />
+    <Content Include="App\Components\product\ProductEditController.js" />
+    <Content Include="App\Components\product\ProductEditView.html" />
+    <Content Include="App\Components\product\ProductListController.js" />
+    <Content Include="App\Components\product\ProductListView.html" />
+    <Content Include="Assets\Admin\css\adminlte.css" />
+    <Content Include="Assets\Admin\css\adminlte.min.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.components.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.components.min.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.core.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.core.min.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.extra-components.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.pages.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.pages.min.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.plugins.css" />
+    <Content Include="Assets\Admin\css\alt\adminlte.plugins.min.css" />
+    <Content Include="Assets\Admin\img\AdminLTELogo.png" />
+    <Content Include="Assets\Admin\img\avatar.png" />
+    <Content Include="Assets\Admin\img\avatar2.png" />
+    <Content Include="Assets\Admin\img\avatar3.png" />
+    <Content Include="Assets\Admin\img\avatar4.png" />
+    <Content Include="Assets\Admin\img\avatar5.png" />
+    <Content Include="Assets\Admin\img\boxed-bg.jpg" />
+    <Content Include="Assets\Admin\img\boxed-bg.png" />
+    <Content Include="Assets\Admin\img\credit\american-express.png" />
+    <Content Include="Assets\Admin\img\credit\cirrus.png" />
+    <Content Include="Assets\Admin\img\credit\mastercard.png" />
+    <Content Include="Assets\Admin\img\credit\paypal.png" />
+    <Content Include="Assets\Admin\img\credit\paypal2.png" />
+    <Content Include="Assets\Admin\img\credit\visa.png" />
+    <Content Include="Assets\Admin\img\default-150x150.png" />
+    <Content Include="Assets\Admin\img\icons.png" />
+    <Content Include="Assets\Admin\img\photo1.png" />
+    <Content Include="Assets\Admin\img\photo2.png" />
+    <Content Include="Assets\Admin\img\photo3.jpg" />
+    <Content Include="Assets\Admin\img\photo4.jpg" />
+    <Content Include="Assets\Admin\img\prod-1.jpg" />
+    <Content Include="Assets\Admin\img\prod-2.jpg" />
+    <Content Include="Assets\Admin\img\prod-3.jpg" />
+    <Content Include="Assets\Admin\img\prod-4.jpg" />
+    <Content Include="Assets\Admin\img\prod-5.jpg" />
+    <Content Include="Assets\Admin\img\user1-128x128.jpg" />
+    <Content Include="Assets\Admin\img\user2-160x160.jpg" />
+    <Content Include="Assets\Admin\img\user3-128x128.jpg" />
+    <Content Include="Assets\Admin\img\user4-128x128.jpg" />
+    <Content Include="Assets\Admin\img\user5-128x128.jpg" />
+    <Content Include="Assets\Admin\img\user6-128x128.jpg" />
+    <Content Include="Assets\Admin\img\user7-128x128.jpg" />
+    <Content Include="Assets\Admin\img\user8-128x128.jpg" />
+    <Content Include="Assets\Admin\js\adminlte.js" />
+    <Content Include="Assets\Admin\js\adminlte.min.js" />
+    <Content Include="Assets\Admin\js\demo.js" />
+    <Content Include="Assets\Admin\js\pages\dashboard.js" />
+    <Content Include="Assets\Admin\js\pages\dashboard2.js" />
+    <Content Include="Assets\Admin\js\pages\dashboard3.js" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\all.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\all.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\brands.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\brands.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\fontawesome.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\regular.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\regular.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\solid.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\solid.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\v4-shims.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="Assets\Admin\libs\jquery\jquery.js" />
+    <Content Include="Assets\Admin\libs\jquery\jquery.min.js" />
+    <Content Include="Assets\Admin\libs\jquery\jquery.slim.js" />
+    <Content Include="Assets\Admin\libs\jquery\jquery.slim.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -218,19 +304,53 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\Components\oders\" />
+    <Folder Include="App\Components\productcategory\" />
+    <Folder Include="App\Components\user\" />
+    <Folder Include="App\Share\Footer\" />
+    <Folder Include="App\Share\Menu\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\admin\" />
-    <Folder Include="Assets\client\" />
-    <Folder Include="Scripts\Plugins\" />
-    <Folder Include="Scripts\Spa\" />
-    <Folder Include="Views\ProductCategory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\Admin\css\adminlte.css.map" />
+    <Content Include="Assets\Admin\css\adminlte.min.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.components.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.components.min.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.core.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.core.min.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.pages.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.plugins.css.map" />
+    <Content Include="Assets\Admin\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="Assets\Admin\js\.eslintrc.json" />
+    <Content Include="Assets\Admin\js\adminlte.js.map" />
+    <Content Include="Assets\Admin\js\adminlte.min.js.map" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="Assets\Admin\libs\jquery\jquery.min.map" />
+    <Content Include="Assets\Admin\libs\jquery\jquery.slim.min.map" />
     <None Include="packages.config" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tedusop.Common\Tedusop.Common.csproj">
@@ -264,16 +384,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61819</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44307/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

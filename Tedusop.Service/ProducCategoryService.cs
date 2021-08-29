@@ -33,12 +33,12 @@ namespace Tedusop.Service
 
         public ProductCategory Add(ProductCategory post)
         {
-            throw new NotImplementedException();
+            return _productCategoryRepository.Add(post);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _productCategoryRepository.Delete(id);
         }
 
         public IEnumerable<ProductCategory> GetAll()
@@ -58,17 +58,17 @@ namespace Tedusop.Service
 
         public ProductCategory GetByid(int id)
         {
-            throw new NotImplementedException();
+           return  _productCategoryRepository.GetSingleById(id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _unitOfWord.Commit();
         }
 
         public void Update(ProductCategory post)
         {
-            throw new NotImplementedException();
+            _productCategoryRepository.Update(post);
         }
     }
 }
