@@ -15,6 +15,6 @@ namespace Tedusop.web.Models
 
       
         public string Type { set; get; }
-        public virtual IEnumerable<PostTagViewModel> PostTag { set; get; }
+        public virtual IEnumerable<PostTagViewModel> PostTag { get; set; }
     }
 }
