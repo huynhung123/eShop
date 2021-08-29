@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedusop.Common", "Tedusop.Common\Tedusop.Common.csproj", "{5E114104-8BC4-45B7-9DA3-13BD5650589D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedusop.Data", "Tedusop.Data\Tedusop.Data.csproj", "{4A93FAC2-F2B7-47ED-BA4B-05DD20888CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedusop.Service", "Tedusop.Service\Tedusop.Service.csproj", "{FE306D0C-92BE-448F-AC87-554ED7957492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedusop.Test", "Tedusop.Test\Tedusop.Test.csproj", "{DF12B62D-7633-43CC-AF78-4FA2B90A2609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedusop.web", "Tedusop.web\Tedusop.web.csproj", "{A39EFC97-6931-4D34-97BF-B70C62F11A12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedusop.Model", "Tedusop.Model\Tedusop.Model.csproj", "{777D23F6-D8D9-4BB0-AD18-3B4F2AD2373C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E114104-8BC4-45B7-9DA3-13BD5650589D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E114104-8BC4-45B7-9DA3-13BD5650589D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E114104-8BC4-45B7-9DA3-13BD5650589D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E114104-8BC4-45B7-9DA3-13BD5650589D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A93FAC2-F2B7-47ED-BA4B-05DD20888CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A93FAC2-F2B7-47ED-BA4B-05DD20888CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A93FAC2-F2B7-47ED-BA4B-05DD20888CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A93FAC2-F2B7-47ED-BA4B-05DD20888CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE306D0C-92BE-448F-AC87-554ED7957492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE306D0C-92BE-448F-AC87-554ED7957492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE306D0C-92BE-448F-AC87-554ED7957492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE306D0C-92BE-448F-AC87-554ED7957492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF12B62D-7633-43CC-AF78-4FA2B90A2609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF12B62D-7633-43CC-AF78-4FA2B90A2609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF12B62D-7633-43CC-AF78-4FA2B90A2609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF12B62D-7633-43CC-AF78-4FA2B90A2609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39EFC97-6931-4D34-97BF-B70C62F11A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39EFC97-6931-4D34-97BF-B70C62F11A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39EFC97-6931-4D34-97BF-B70C62F11A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39EFC97-6931-4D34-97BF-B70C62F11A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777D23F6-D8D9-4BB0-AD18-3B4F2AD2373C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777D23F6-D8D9-4BB0-AD18-3B4F2AD2373C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777D23F6-D8D9-4BB0-AD18-3B4F2AD2373C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777D23F6-D8D9-4BB0-AD18-3B4F2AD2373C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB6849E4-2B14-4122-BC2A-03AC3F1BE7CC}
+	EndGlobalSection
+EndGlobal
