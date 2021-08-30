@@ -209,6 +209,9 @@
     <Content Include="App\app.js" />
     <Content Include="App\Components\Home\HomeController.js" />
     <Content Include="App\Components\Home\HomeView.html" />
+    <Content Include="App\Components\ProductCategory\ProductCategory.modules.js" />
+    <Content Include="App\Components\ProductCategory\ProductCategoryListController.js" />
+    <Content Include="App\Components\ProductCategory\ProductCategoryListView.html" />
     <Content Include="App\Components\product\Product.modul.js" />
     <Content Include="App\Components\product\ProductAddController.js" />
     <Content Include="App\Components\product\ProductAddView.html" />
@@ -216,6 +219,8 @@
     <Content Include="App\Components\product\ProductEditView.html" />
     <Content Include="App\Components\product\ProductListController.js" />
     <Content Include="App\Components\product\ProductListView.html" />
+    <Content Include="App\shraed\modules\Tedushop.common.js" />
+    <Content Include="App\shraed\Service\apiService.js" />
     <Content Include="Assets\Admin\css\adminlte.css" />
     <Content Include="Assets\Admin\css\adminlte.min.css" />
     <Content Include="Assets\Admin\css\alt\adminlte.components.css" />
@@ -267,6 +272,18 @@
     <Content Include="Assets\Admin\js\pages\dashboard.js" />
     <Content Include="Assets\Admin\js\pages\dashboard2.js" />
     <Content Include="Assets\Admin\js\pages\dashboard3.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\angular-ui-router.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\angular-ui-router.min.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\resolveService.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\resolveService.min.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\stateEvents.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\stateEvents.min.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\ui-router-angularjs.js" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\ui-router-angularjs.min.js" />
+    <Content Include="Assets\Admin\libs\angular.js\angular-csp.css" />
+    <Content Include="Assets\Admin\libs\angular.js\angular-csp.min.css" />
+    <Content Include="Assets\Admin\libs\angular.js\angular.js" />
+    <Content Include="Assets\Admin\libs\angular.js\angular.min.js" />
     <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Assets\Admin\libs\bootstrap\js\bootstrap.js" />
@@ -305,10 +322,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Components\oders\" />
-    <Folder Include="App\Components\productcategory\" />
-    <Folder Include="App\Components\user\" />
-    <Folder Include="App\Share\Footer\" />
-    <Folder Include="App\Share\Menu\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +362,16 @@
     <Content Include="Assets\Admin\libs\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Assets\Admin\libs\jquery\jquery.min.map" />
     <Content Include="Assets\Admin\libs\jquery\jquery.slim.min.map" />
+    <Content Include="libman.json" />
+    <Content Include="Assets\Admin\libs\angular.js\angular.min.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\angular-ui-router.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\angular-ui-router.min.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\resolveService.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\resolveService.min.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\stateEvents.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\stateEvents.min.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\ui-router-angularjs.js.map" />
+    <Content Include="Assets\Admin\libs\angular-ui-router\ui-router-angularjs.min.js.map" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>

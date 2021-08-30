@@ -64,7 +64,7 @@ namespace Tedusop.web.Api
         public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
         {
             return CreateHttpResponse(request, () =>
-            {
+            {           
 
                 HttpResponseMessage response = null;
                 if (!ModelState.IsValid)

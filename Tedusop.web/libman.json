@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "angular.js@1.8.2",
+      "destination": "Assets/Admin/libs/angular.js/"
+    },
+    {
+      "library": "angular-ui-router@1.0.29",
+      "destination": "Assets/Admin/libs/angular-ui-router/"
+    }
+  ]
+}
