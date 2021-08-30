@@ -219,6 +219,7 @@
     <Content Include="App\Components\product\ProductEditView.html" />
     <Content Include="App\Components\product\ProductListController.js" />
     <Content Include="App\Components\product\ProductListView.html" />
+    <Content Include="App\shraed\Filters\Status.filters.js" />
     <Content Include="App\shraed\modules\Tedushop.common.js" />
     <Content Include="App\shraed\Service\apiService.js" />
     <Content Include="Assets\Admin\css\adminlte.css" />
