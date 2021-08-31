@@ -194,6 +194,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="infrastructure\core\ApiControllerBase.cs" />
+    <Compile Include="infrastructure\core\PaginationSet.cs" />
     <Compile Include="infrastructure\extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
@@ -219,6 +220,8 @@
     <Content Include="App\Components\product\ProductEditView.html" />
     <Content Include="App\Components\product\ProductListController.js" />
     <Content Include="App\Components\product\ProductListView.html" />
+    <Content Include="App\shraed\directives\pageDirective.html" />
+    <Content Include="App\shraed\directives\pageDirective.js" />
     <Content Include="App\shraed\Filters\Status.filters.js" />
     <Content Include="App\shraed\modules\Tedushop.common.js" />
     <Content Include="App\shraed\Service\apiService.js" />

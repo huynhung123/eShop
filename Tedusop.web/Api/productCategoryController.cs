@@ -28,38 +28,30 @@ namespace Tedusop.web.Api
         }
         [Route("getall")]
         // GET api/<controller>
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        public HttpResponseMessage Get(HttpRequestMessage request, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
             {
-
+                
+                int totalRow = 0;
+                
                 var listCategory = _producCategoryService.GetAll();
-                var listcategoryVm = Mapper.Map<List<ProductCategoryViewModel>>(listCategory);
+                totalRow = listCategory.Count();
+                
+                var query = listCategory.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+                var listcategoryVm = Mapper.Map<List<ProductCategoryViewModel>>(query);
 
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listcategoryVm);
+                var paginationSet = new PaginationSet<ProductCategoryViewModel>()
+                {
+                    Items = listcategoryVm,
+                    Page = page,
+                    TotalCuont=totalRow,
+                    TotalPage=(int)Math.Ceiling((decimal)totalRow/pageSize)
+
+                };
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
         }
     }
 }
