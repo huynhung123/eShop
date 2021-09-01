@@ -10,18 +10,19 @@ using System.Linq.Expressions;
 
 namespace Tedusop.Service
 {
-    public  interface IProducCategoryService
+    public interface IProducCategoryService
     {
         ProductCategory Add(ProductCategory post);
         void Update(ProductCategory post);
         void Delete(int id);
         IEnumerable<ProductCategory> GetAll();
+        IEnumerable<ProductCategory> GetMutip(String Keyword);
         ProductCategory GetByid(int id);
         IEnumerable<ProductCategory> GetAllPaging(int page, int pageSize, out int totalRow);
         IEnumerable<ProductCategory> GetAllByTagPaging(String tag, int page, int pageSize, out int totalRow);
         void SaveChanges();
     }
-    public  class ProducCategoryService : IProducCategoryService
+    public class ProducCategoryService : IProducCategoryService
     {
         IProductCategoryRepository _productCategoryRepository;
         IUnitOfWord _unitOfWord;
@@ -46,6 +47,14 @@ namespace Tedusop.Service
             return _productCategoryRepository.GetAll();
         }
 
+        public IEnumerable<ProductCategory> GetMutip(string Keyword)
+        {
+            if (!String.IsNullOrEmpty(Keyword))
+                return _productCategoryRepository.GetMulti(x => x.Name.Contains(Keyword) || x.Description.Contains(Keyword));
+            else
+                return _productCategoryRepository.GetAll();
+        }
+
         public IEnumerable<ProductCategory> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
         {
             throw new NotImplementedException();
@@ -58,7 +67,7 @@ namespace Tedusop.Service
 
         public ProductCategory GetByid(int id)
         {
-           return  _productCategoryRepository.GetSingleById(id);
+            return _productCategoryRepository.GetSingleById(id);
         }
 
         public void SaveChanges()

@@ -28,19 +28,20 @@ namespace Tedusop.web.Api
         }
         [Route("getall")]
         // GET api/<controller>
-        public HttpResponseMessage Get(HttpRequestMessage request, int page, int pageSize = 20)
+        public HttpResponseMessage Get(HttpRequestMessage request, String keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
             {
                 
                 int totalRow = 0;
                 
-                var listCategory = _producCategoryService.GetAll();
+                var listCategory = _producCategoryService.GetMutip(keyword);
                 totalRow = listCategory.Count();
                 
                 var query = listCategory.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
                 var listcategoryVm = Mapper.Map<List<ProductCategoryViewModel>>(query);
-
+              
+                #region phantrang   
                 var paginationSet = new PaginationSet<ProductCategoryViewModel>()
                 {
                     Items = listcategoryVm,
@@ -49,6 +50,7 @@ namespace Tedusop.web.Api
                     TotalPage=(int)Math.Ceiling((decimal)totalRow/pageSize)
 
                 };
+                #endregion
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });

@@ -36,24 +36,32 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Từ khóa" ng-model="keyword" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" ng-click="SeachPC()" type="button" id="button-addon2">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-12">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width: 10%">ID</th>
-                                    <th style="width: 40%">Tên Danh Mục</th>
-                                    <th style="width: 30">Ngày Tạo</th>
-                                    <th style="width: 10%">Trạng thái</th>
-                                    <th style="width: 10%">Thao tác</th>
-                                    
+                                    <th style="width: 10%;">ID</th>
+                                    <th style="width: 40%;">Tên Danh Mục</th>
+                                    <th style="width: 30%;">Ngày Tạo</th>
+                                    <th style="width: 10%;">Trạng thái</th>
+                                    <th style="width: 10%;">Thao tác</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in productcategories">
                                     <td>{{item.ID}}</td>
                                     <td>{{item.Name}}</td>
-                                    <td >
-                                       {{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}
+                                    <td>
+                                        {{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}
                                     </td>
                                     <td><span ng-class="{'badge bg-danger': item.Status == true, 'badge bg-blue': item.Status == false  }">{{item.Status | statusfilters}}</span></td>
                                     <td>
@@ -64,7 +72,14 @@
 
                                     </td>
                                 </tr>
+
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Tổng số bản ghi: {{TotalCuont}} </td>
+                                </tr>
+                            </tfoot>
+                           
                         </table>
                     </div>
                 </div>
