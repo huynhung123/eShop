@@ -20,7 +20,7 @@ namespace Tedusop.Service
         ProductCategory GetByid(int id);
         IEnumerable<ProductCategory> GetAllPaging(int page, int pageSize, out int totalRow);
         IEnumerable<ProductCategory> GetAllByTagPaging(String tag, int page, int pageSize, out int totalRow);
-        void SaveChanges();
+        void save();
     }
     public class ProducCategoryService : IProducCategoryService
     {
@@ -70,7 +70,7 @@ namespace Tedusop.Service
             return _productCategoryRepository.GetSingleById(id);
         }
 
-        public void SaveChanges()
+        public void save()
         {
             _unitOfWord.Commit();
         }

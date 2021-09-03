@@ -42,48 +42,49 @@
                             <button class="btn btn-outline-secondary" ng-click="SeachPC()" type="button" id="button-addon2">Tìm kiếm</button>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width: 10%;">ID</th>
-                                    <th style="width: 40%;">Tên Danh Mục</th>
-                                    <th style="width: 30%;">Ngày Tạo</th>
-                                    <th style="width: 10%;">Trạng thái</th>
-                                    <th style="width: 10%;">Thao tác</th>
+                    <div class="col-md-6"><button class="btn btn-outline-secondary" ui-sref="productcategoryadd" type="button" id="button-addon2">THÊM MỚI DANH MỤC</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%;">ID</th>
+                                        <th style="width: 40%;">Tên Danh Mục</th>
+                                        <th style="width: 30%;">Ngày Tạo</th>
+                                        <th style="width: 10%;">Trạng thái</th>
+                                        <th style="width: 10%;">Thao tác</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="item in productcategories">
-                                    <td>{{item.ID}}</td>
-                                    <td>{{item.Name}}</td>
-                                    <td>
-                                        {{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}
-                                    </td>
-                                    <td><span ng-class="{'badge bg-danger': item.Status == true, 'badge bg-blue': item.Status == false  }">{{item.Status | statusfilters}}</span></td>
-                                    <td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in productcategories">
+                                        <td>{{item.ID}}</td>
+                                        <td>{{item.Name}}</td>
+                                        <td>
+                                            {{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}
+                                        </td>
+                                        <td><span ng-class="{'badge bg-danger': item.Status == true, 'badge bg-blue': item.Status == false  }">{{item.Status | statusfilters}}</span></td>
+                                        <td>
 
-                                        <button class="btn btn-sm btn-primary"><i class="fa fa-paint-brush"></i></button>
+                                            <button class="btn btn-sm btn-primary"><i class="fa fa-paint-brush"></i></button>
 
-                                        <button class="btn  btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                            <button class="btn  btn-sm btn-danger"><i class="fa fa-trash"></i></button>
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="4">Tổng số bản ghi: {{TotalCuont}} </td>
-                                </tr>
-                            </tfoot>
-                           
-                        </table>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">Tổng số bản ghi: {{TotalCuont}} </td>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
             <!-- /.card-body -->
 
         </div>

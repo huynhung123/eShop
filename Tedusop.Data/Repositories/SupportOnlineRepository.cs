@@ -11,6 +11,6 @@ namespace Tedusop.Data.Repositories
     public interface ISupportOnlineRepository : IRepository<SupportOnline> { }
     public  class SupportOnlineRepository:RepositoryBase<SupportOnline>,ISupportOnlineRepository
     {
-        public SupportOnlineRepository(DbFactory dbFactory) : base(dbFactory) { }
+        public SupportOnlineRepository(IDbFactory dbFactory) : base(dbFactory) { }
     }
 }

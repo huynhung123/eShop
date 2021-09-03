@@ -11,6 +11,6 @@ namespace Tedusop.Data.Repositories
     public interface IPostTagRepository : IRepository<PostTag> { }
     public  class PostTagRepository:RepositoryBase<PostTag>,IPostTagRepository
     {
-        public PostTagRepository(DbFactory dbFactory) : base(dbFactory) { }
+        public PostTagRepository(IDbFactory dbFactory) : base(dbFactory) { }
     }
 }

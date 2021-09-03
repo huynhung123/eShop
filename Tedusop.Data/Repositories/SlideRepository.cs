@@ -11,6 +11,6 @@ namespace Tedusop.Data.Repositories
     public interface ISlideRepository : IRepository<Slide> { }
     public  class SlideRepository:RepositoryBase<Slide>,ISlideRepository
     {
-        public SlideRepository(DbFactory dbFactory) : base(dbFactory) { }
+        public SlideRepository(IDbFactory dbFactory) : base(dbFactory) { }
     }
 }

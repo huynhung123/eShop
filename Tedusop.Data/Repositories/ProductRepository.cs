@@ -11,6 +11,6 @@ namespace Tedusop.Data.Repositories
     public interface IproductRepository : IRepository<Product>{ }
     public  class ProductRepository : RepositoryBase<Product>,IproductRepository
     {
-        public ProductRepository(DbFactory dbFactory) : base(dbFactory) { }
+        public ProductRepository(IDbFactory dbFactory) : base(dbFactory) { }
     }
 }

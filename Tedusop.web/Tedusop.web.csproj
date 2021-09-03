@@ -211,6 +211,8 @@
     <Content Include="App\Components\Home\HomeController.js" />
     <Content Include="App\Components\Home\HomeView.html" />
     <Content Include="App\Components\ProductCategory\ProductCategory.modules.js" />
+    <Content Include="App\Components\ProductCategory\ProductCategoryAddController.js" />
+    <Content Include="App\Components\ProductCategory\ProductCategoryAddView.html" />
     <Content Include="App\Components\ProductCategory\ProductCategoryListController.js" />
     <Content Include="App\Components\ProductCategory\ProductCategoryListView.html" />
     <Content Include="App\Components\product\Product.modul.js" />
@@ -225,6 +227,7 @@
     <Content Include="App\shraed\Filters\Status.filters.js" />
     <Content Include="App\shraed\modules\Tedushop.common.js" />
     <Content Include="App\shraed\Service\apiService.js" />
+    <Content Include="App\shraed\Service\notificationService.js" />
     <Content Include="Assets\Admin\css\adminlte.css" />
     <Content Include="Assets\Admin\css\adminlte.min.css" />
     <Content Include="Assets\Admin\css\alt\adminlte.components.css" />
@@ -313,6 +316,10 @@
     <Content Include="Assets\Admin\libs\jquery\jquery.min.js" />
     <Content Include="Assets\Admin\libs\jquery\jquery.slim.js" />
     <Content Include="Assets\Admin\libs\jquery\jquery.slim.min.js" />
+    <Content Include="Assets\Admin\libs\toastr.js\css\toastr.css" />
+    <Content Include="Assets\Admin\libs\toastr.js\css\toastr.min.css" />
+    <Content Include="Assets\Admin\libs\toastr.js\js\toastr.js" />
+    <Content Include="Assets\Admin\libs\toastr.js\js\toastr.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

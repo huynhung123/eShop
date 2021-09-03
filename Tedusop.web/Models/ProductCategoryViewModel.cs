@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,9 +9,10 @@ namespace Tedusop.web.Models
     public class ProductCategoryViewModel
     {
         public int ID { set; get; }
-    
+
+        [Required]    
         public String Name { set; get; }
-      
+        [Required]
         public String Alias { set; get; }
         public String Description { set; get; }
         public int? parentID { set; get; }
@@ -28,6 +30,7 @@ namespace Tedusop.web.Models
         public String MetaKeyword { set; get; }
     
         public String MetaDescription { set; get; }
+        [Required]
         public bool Status { set; get; }
         public virtual IEnumerable<ProductViewModel> Products { set; get; }
 

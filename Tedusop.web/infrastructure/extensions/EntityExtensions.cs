@@ -32,5 +32,28 @@ namespace Tedusop.web.infrastructure.extensions
             post.HomeFlag = posVm.HomeFlag;
             post.ViewCount = posVm.ViewCount;
         }
+        public static void updateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryViewModel)
+        {
+            productCategory.ID = productCategoryViewModel.ID;
+            productCategory.Name = productCategoryViewModel.Name;
+            productCategory.Alias = productCategoryViewModel.Alias;
+            productCategory.Description = productCategoryViewModel.Description;
+            productCategory.parentID = productCategoryViewModel.parentID;
+            productCategory.DisplayOder = productCategoryViewModel.DisplayOder;
+            productCategory.Image = productCategoryViewModel.Image;
+            productCategory.HomeFlang = productCategoryViewModel.HomeFlang;
+            productCategory.CreatedDate = productCategoryViewModel.CreatedDate;
+            productCategory.CreatedBy = productCategoryViewModel.CreatedBy;
+            productCategory.UpdatedDate = productCategoryViewModel.UpdatedDate;
+            productCategory.UpdateBy = productCategoryViewModel.UpdateBy;
+            productCategory.MetaKeyword = productCategoryViewModel.MetaKeyword;
+            productCategory.MetaDescription = productCategoryViewModel.MetaDescription;
+            productCategory.Status = productCategoryViewModel.Status;
+            
+
+
+
+
+        }
     }
 }
