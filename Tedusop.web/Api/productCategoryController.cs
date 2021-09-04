@@ -28,21 +28,7 @@ namespace Tedusop.web.Api
         }
 
 
-        [Route("getallParents")]
-        [HttpGet]
-        // GET api/<controller>
-        public HttpResponseMessage Get(HttpRequestMessage request)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-
-                var listCategory = _producCategoryService.GetAll();
-                var listcategoryVm = Mapper.Map<List<ProductCategoryViewModel>>(listCategory);
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listcategoryVm);
-                return response;
-            });
-        }
-
+     
 
 
 
@@ -76,6 +62,26 @@ namespace Tedusop.web.Api
                 return response;
             });
         }
+
+
+
+
+        [Route("getallParents")]
+        [HttpGet]
+        // GET api/<controller>
+        public HttpResponseMessage Get(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+
+                var listCategory = _producCategoryService.GetAll();
+                var listcategoryVm = Mapper.Map<List<ProductCategoryViewModel>>(listCategory);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listcategoryVm);
+                return response;
+            });
+        }
+
+
         [Route("Created")]
         [HttpPost]
         public HttpResponseMessage Created(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
@@ -95,6 +101,55 @@ namespace Tedusop.web.Api
                     newproductCategory.updateProductCategory(productCategoryViewModel);
 
                     _producCategoryService.Add(newproductCategory);
+                    _producCategoryService.save();
+
+                    var responData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newproductCategory);
+                    reppnse = request.CreateResponse(HttpStatusCode.Created, responData);
+                }
+
+                return reppnse;
+            });
+        }
+
+
+
+
+        [Route("GetbyId/{id:int}")]
+        [HttpGet]
+        // GET api/<controller>
+        public HttpResponseMessage GetByID(HttpRequestMessage request,int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+
+                var listCategory = _producCategoryService.GetByid(id);
+                var listcategoryVm = Mapper.Map<ProductCategory, ProductCategoryViewModel>(listCategory);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listcategoryVm);
+                return response;
+            });
+        }
+
+
+
+        [Route("update")]
+        [HttpPut]
+        public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
+        {
+
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage reppnse = null;
+
+                if (!ModelState.IsValid)
+                {
+                    reppnse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newproductCategory = _producCategoryService.GetByid(productCategoryViewModel.ID);
+                    newproductCategory.updateProductCategory(productCategoryViewModel);
+
+                    _producCategoryService.Update(newproductCategory);
                     _producCategoryService.save();
 
                     var responData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newproductCategory);

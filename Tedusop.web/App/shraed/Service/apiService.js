@@ -1,7 +1,6 @@
 ﻿/// <reference path="../../../assets/admin/libs/angular.js/angular.js" />
 
 
-
 (function (app) {
     app.factory('apiService', apiService);
     apiService.$inject = ['$http', 'notificationService'];
@@ -12,10 +11,7 @@
             post: post
         }
         //them moi san pham
-
-
-
-        
+                
             function post(url, data, success, failure) {
                 $http.post(url, data).then(function (result) {
                     success(result);

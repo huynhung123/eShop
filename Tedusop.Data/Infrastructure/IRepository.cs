@@ -11,8 +11,8 @@ namespace Tedusop.Data.Infrastructure
     {
         T Add(T entity);
         void Update(T entity);
-        void Delete(T entity);
-        void Delete(int id);
+        T Delete(T entity);
+        T Delete(int id);
               // xoa nhieu ban ghi
         void DeleteMulti(Expression<Func<T, bool>>where);
 

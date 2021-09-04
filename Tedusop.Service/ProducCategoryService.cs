@@ -14,7 +14,7 @@ namespace Tedusop.Service
     {
         ProductCategory Add(ProductCategory post);
         void Update(ProductCategory post);
-        void Delete(int id);
+        ProductCategory Delete(int id);
         IEnumerable<ProductCategory> GetAll();
         IEnumerable<ProductCategory> GetMutip(String Keyword);
         ProductCategory GetByid(int id);
@@ -37,9 +37,9 @@ namespace Tedusop.Service
             return _productCategoryRepository.Add(post);
         }
 
-        public void Delete(int id)
+        public ProductCategory Delete(int id)
         {
-            _productCategoryRepository.Delete(id);
+           return _productCategoryRepository.Delete(id);
         }
 
         public IEnumerable<ProductCategory> GetAll()
