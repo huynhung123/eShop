@@ -78,13 +78,13 @@ namespace Tedusop.web.Api
         }
         [Route("Created")]
         [HttpPost]
-            public HttpResponseMessage Created(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
+        public HttpResponseMessage Created(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
         {
 
-          
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage reppnse = null;
+
                 if (!ModelState.IsValid)
                 {
                     reppnse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
@@ -100,9 +100,8 @@ namespace Tedusop.web.Api
                     var responData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newproductCategory);
                     reppnse = request.CreateResponse(HttpStatusCode.Created, responData);
                 }
-              
-                return reppnse;
 
+                return reppnse;
             });
         }
     }
