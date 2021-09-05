@@ -2,14 +2,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>THÊM MỚI DANH MỤC</h1>
+                <h1>CẬP NHẬT DANH MỤC : {{ProducCategory.Name}}</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Trang trủ</a></li>
                     <li class="breadcrumb-item active">SẢN PHẨM</li>
                     <li class="breadcrumb-item"><a ui-sref="productcategory">DANH MỤC</a></li>
-                    <li class="breadcrumb-item">THÊM MỚI</li>
+                    <li class="breadcrumb-item">CẬP NHẬT</li>
                 </ol>
             </div>
         </div>
@@ -19,16 +19,16 @@
 
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Thêm mới</h3>
+            <h3 class="card-title">{{ProducCategory.Name}}</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form class="form-horizontal" novalidate role="form"  ng-submit="frmProductcategoryAdd()">
+        <form class="form-horizontal" novalidate role="form" ng-submit="frmProductcategoryEdit()">
             <div class="card-body">
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Tên Danh mục</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="Name" ng-change="GetseoAlias();" ng-model="ProducCategory.Name">
+                        <input type="text" class="form-control" name="Name" ng-change="GetseoAlias()" ng-model="ProducCategory.Name">
                     </div>
                 </div>
                 <div class="form-group row">

@@ -3,14 +3,14 @@
 
     app.controller('ProductCategoryAddController', ProductCategoryAddController)
 
-    ProductCategoryAddController.$inject = ['$scope', 'apiService', 'notificationService', '$state'];
+    ProductCategoryAddController.$inject = ['$scope', 'apiService', 'notificationService', '$state','commonService'];
 
-    function ProductCategoryAddController($scope, apiService, notificationService, $state) {
+    function ProductCategoryAddController($scope, apiService, notificationService, $state, commonService) {
 
         $scope.ProducCategory = {
 
             CreatedDate: new Date(),
-            Status: true,
+            Status: true
          
         }
 
@@ -41,6 +41,14 @@
 
                 console.log('Cannot Pr');
             });
+
+        }
+
+        /// Seo Alias
+        $scope.GetseoAlias = GetseoAlias;
+        function GetseoAlias() {
+
+            $scope.ProducCategory.Alias = commonService.getSeoTitle($scope.ProducCategory.Name);
 
         }
 
