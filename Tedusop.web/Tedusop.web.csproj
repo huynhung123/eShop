@@ -214,6 +214,8 @@
     <Content Include="App\Components\ProductCategory\ProductCategory.modules.js" />
     <Content Include="App\Components\ProductCategory\ProductCategoryAddController.js" />
     <Content Include="App\Components\ProductCategory\ProductCategoryAddView.html" />
+    <Content Include="App\Components\ProductCategory\productCategoryEditController.js" />
+    <Content Include="App\Components\ProductCategory\productCategoryEditView.html" />
     <Content Include="App\Components\ProductCategory\ProductCategoryListController.js" />
     <Content Include="App\Components\ProductCategory\ProductCategoryListView.html" />
     <Content Include="App\Components\product\Product.modul.js" />
@@ -228,6 +230,7 @@
     <Content Include="App\shraed\Filters\Status.filters.js" />
     <Content Include="App\shraed\modules\Tedushop.common.js" />
     <Content Include="App\shraed\Service\apiService.js" />
+    <Content Include="App\shraed\Service\CommonService.js" />
     <Content Include="App\shraed\Service\notificationService.js" />
     <Content Include="Assets\Admin\css\adminlte.css" />
     <Content Include="Assets\Admin\css\adminlte.min.css" />
