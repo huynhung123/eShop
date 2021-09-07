@@ -1,4 +1,4 @@
 ﻿(function () {
-    angular.module('Tedushop.common', ['ui.router'])
+    angular.module('Tedushop.common', ['ui.router','ngBootbox'])
 
 })();

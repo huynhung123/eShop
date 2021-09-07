@@ -159,5 +159,34 @@ namespace Tedusop.web.Api
                 return reppnse;
             });
         }
+
+        //xoa san pham
+
+        [Route("a")]
+        [HttpDelete]
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
+        {
+
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage reppnse = null;
+
+                if (!ModelState.IsValid)
+                {
+                    reppnse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newproductCategory = _producCategoryService.Delete(id);
+                   
+                    _producCategoryService.save();
+
+                    var responData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newproductCategory);
+                    reppnse = request.CreateResponse(HttpStatusCode.Created, responData);
+                }
+
+                return reppnse;
+            });
+        }
     }
 }

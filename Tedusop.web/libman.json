@@ -13,6 +13,15 @@
     {
       "library": "toastr.js@2.1.0",
       "destination": "Assets/Admin/libs/toastr.js/"
+    },
+    {
+      "library": "bootbox.js@5.5.2",
+      "destination": "Assets/Admin/libs/bootbox.js/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "ngbootbox@0.2.0",
+      "destination": "Assets/Admin/libs/ngbootbox/"
     }
   ]
 }

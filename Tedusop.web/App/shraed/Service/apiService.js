@@ -9,10 +9,29 @@
         return {
             get: get,
             post: post,
-            put:put
+            put: put,
+            del: del
+        }
+        // xoa san pham
+
+        function del(url, data, success, failure) {
+            $http.delete(url, data).then(function (result) {
+                success(result);
+            }, function (error) {
+                console.log(error.status)
+                if (error.status === 401) {
+                    notificationService.displayError('Authenticate is required.');
+                }
+                else if (failure != null) {
+                    failure(error);
+                }
+
+            });
         }
 
-        //them moi san pham
+
+
+        //cap nhat san pham
 
         function put(url, data, success, failure) {
             $http.put(url, data).then(function (result) {
@@ -32,38 +51,38 @@
 
 
         //them moi san pham
-                
-            function post(url, data, success, failure) {
-                $http.post(url, data).then(function (result) {
-                    success(result);
-                }, function (error) {
-                    console.log(error.status)
-                    if (error.status === 401) {
-                        notificationService.displayError('Authenticate is required.');
-                    }
-                    else if (failure != null) {
-                        failure(error);
-                    }
 
-                });
-            }
-
-
-            // Get sn pham ra
-            function get(url, params, success, failure) {
-
-                $http.get(url, params).then(function (result) {
-
-                    success(result);
-
-
-                }, function (error) {
-
+        function post(url, data, success, failure) {
+            $http.post(url, data).then(function (result) {
+                success(result);
+            }, function (error) {
+                console.log(error.status)
+                if (error.status === 401) {
+                    notificationService.displayError('Authenticate is required.');
+                }
+                else if (failure != null) {
                     failure(error);
+                }
 
-                });
-
-            }
+            });
         }
 
-    }) (angular.module('Tedushop.common'));
+
+        // Get sn pham ra
+        function get(url, params, success, failure) {
+
+            $http.get(url, params).then(function (result) {
+
+                success(result);
+
+
+            }, function (error) {
+
+                failure(error);
+
+            });
+
+        }
+    }
+
+})(angular.module('Tedushop.common'));
