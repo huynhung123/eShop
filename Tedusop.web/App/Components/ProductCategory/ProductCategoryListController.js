@@ -29,7 +29,7 @@
                         id: id
                     }
                 }
-                apiService.del('api/product1/a', config, function () {
+                apiService.del('api/product1/delete', config, function () {
                     notificationService.displaySuccess('Xóa thành công');
                     SeachPC();
                 }, function () {
