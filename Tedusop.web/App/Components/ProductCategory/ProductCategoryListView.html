@@ -40,15 +40,21 @@
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Từ khóa" ng-model="keyword" aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" ng-click="SeachPC()" type="button" id="button-addon2">Tìm kiếm</button>
+
                         </div>
                     </div>
-                    <div class="col-md-6"><button class="btn btn-outline-secondary" ui-sref="productcategoryadd" type="button" id="button-addon2">THÊM MỚI DANH MỤC</button></div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" ui-sref="productcategoryadd" type="button" id="button-addon2">THÊM MỚI DANH MỤC</button>
+                        <button class="btn btn-danger" ng-click="deleteMuti()" type="button" id="btndelete" disabled>Xóa</button>
                     </div>
+                   
+                </div>
                     <div class="row">
                         <div class="col-md-12">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
+                                        <th><input name="all" type="checkbox" ng-click="selectAll()" /></th>
                                         <th style="width: 10%;">ID</th>
                                         <th style="width: 40%;">Tên Danh Mục</th>
                                         <th style="width: 30%;">Ngày Tạo</th>
@@ -59,6 +65,7 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="item in productcategories">
+                                        <td><input name="all" type="checkbox" ng-model="item.ckecked" /> </td>
                                         <td>{{item.ID}}</td>
                                         <td>{{item.Name}}</td>
                                         <td>

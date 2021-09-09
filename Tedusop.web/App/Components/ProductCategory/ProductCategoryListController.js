@@ -1,9 +1,9 @@
 ﻿(function (app) {
 
     app.controller('ProductCategoryListController', ProductCategoryListController)
-    ProductCategoryListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
+    ProductCategoryListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox','$filter'];
 
-    function ProductCategoryListController($scope, apiService, notificationService, $ngBootbox) {
+    function ProductCategoryListController($scope, apiService, notificationService, $ngBootbox, $filter) {
 
         $scope.productcategories = [];
         $scope.page = 0; /// phan trang
@@ -75,7 +75,50 @@
 
         }
 
+        ///Xoa nhieu danh muc san pham
+        // checkALL Checkbox
+
+        $scope.$watch('productcategories', function (n, o) {
+
+            var ckecked = $filter("filter")(n, { ckecked: true });
+            if (ckecked.length) {
+                $scope.selected = ckecked;
+                $('#btndelete').removeAttr('disabled');
+            }
+            else {
+
+                $('#btndelete').attr('disabled', 'disabled');
+            }
+
+        }, true);
+
+        $scope.selectAll = selectAll;
+        $scope.a = false;
+        function selectAll() {
+
+            if ($scope.a == false) {
+                angular.forEach($scope.productcategories, function (item) {
+
+                    item.ckecked = true;
+                });
+
+                $scope.a = true;
+            }
+            else
+            {
+                angular.forEach($scope.productcategories, function (item) {
+
+                    item.ckecked = false;
+                });
+
+                $scope.a = false;
+            }
+        }
+
+
+
         $scope.getProductcategories();
+
     }
 
 
