@@ -1,7 +1,7 @@
 ﻿(function (app) {
 
     app.controller('ProductCategoryListController', ProductCategoryListController)
-    ProductCategoryListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox','$filter'];
+    ProductCategoryListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox', '$filter'];
 
     function ProductCategoryListController($scope, apiService, notificationService, $ngBootbox, $filter) {
 
@@ -78,6 +78,32 @@
         ///Xoa nhieu danh muc san pham
         // checkALL Checkbox
 
+        $scope.deleteMuti = deleteMuti;
+        function deleteMuti() {
+            var lisID = [];
+            $.each($scope.selected, function (product, item) {
+
+                lisID.push(item.ID);
+            });
+            var config = {
+                params: {
+
+                    checkProduct: JSON.stringify(lisID)
+                }
+
+            }
+            apiService.del('api/product1/deletemulti', config, function (result) {
+                notificationService.displaySuccess('xoa thanh cong');
+                getProductcategories();
+            }, function (error) {
+
+                notificationService.displayError('xoa khong thanh cong');
+
+            });
+        }
+
+
+
         $scope.$watch('productcategories', function (n, o) {
 
             var ckecked = $filter("filter")(n, { ckecked: true });
@@ -104,8 +130,7 @@
 
                 $scope.a = true;
             }
-            else
-            {
+            else {
                 angular.forEach($scope.productcategories, function (item) {
 
                     item.ckecked = false;
