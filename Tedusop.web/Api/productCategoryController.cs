@@ -12,6 +12,7 @@ using Tedusop.Model.Models;
 using AutoMapper;
 using Tedusop.web.Models;
 using Tedusop.web.infrastructure.extensions;
+using System.Web.Script.Serialization;
 
 namespace Tedusop.web.Api
 {
@@ -159,5 +160,64 @@ namespace Tedusop.web.Api
                 return reppnse;
             });
         }
+
+        //xoa 1 san pham
+
+        [Route("delete")]
+        [HttpDelete]
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
+        {
+
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage reppnse = null;
+
+                if (!ModelState.IsValid)
+                {
+                    reppnse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newproductCategory = _producCategoryService.Delete(id);
+                   
+                    _producCategoryService.save();
+
+                    var responData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newproductCategory);
+                    reppnse = request.CreateResponse(HttpStatusCode.Created, responData);
+                }
+
+                return reppnse;
+            });
+        }
+
+        /// xóa nhiều sản phẩm
+        [Route("deletemulti")]
+        [HttpDelete]
+        public HttpResponseMessage DeleteMuti(HttpRequestMessage request, String checkProduct)
+        {
+            return CreateHttpResponse(request, () => {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var lisproduct = new JavaScriptSerializer().Deserialize<List<int>>(checkProduct);
+                    foreach (var item in lisproduct)
+                    {
+                        _producCategoryService.Delete(item);
+                    
+                    }
+                    _producCategoryService.save();
+                    response = request.CreateResponse(HttpStatusCode.OK, lisproduct.Count);
+                }
+                return response;
+
+            });
+          
+        }
+        
+
     }
 }

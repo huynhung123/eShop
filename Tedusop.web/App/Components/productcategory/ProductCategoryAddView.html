@@ -23,18 +23,20 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form class="form-horizontal" novalidate role="form"  ng-submit="frmProductcategoryAdd()">
+        <form class="form-horizontal" novalidate role="form" name="frmaddproduct" ng-submit="frmProductcategoryAdd()">
             <div class="card-body">
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Tên Danh mục</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="Name" ng-change="GetseoAlias();" ng-model="ProducCategory.Name">
+                        <input type="text" class="form-control" name="Name" required ng-change="GetseoAlias();" ng-model="ProducCategory.Name">
+                        <span ng-show="frmaddproduct.Name.$invalid" style="color:red;"> Phải nhập tên danh mục</span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Tiêu đề Seo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="Alias" ng-model="ProducCategory.Alias">
+                        <input type="text" class="form-control" required name="Alias" ng-model="ProducCategory.Alias">
+                        <span ng-show="frmaddproduct.Alias.$invalid" style="color:red;"> Phải nhập tiêu đề Seo</span>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -55,7 +57,8 @@
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Thứ tự hiển thị</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="DisplayOder" ng-model="ProducCategory.DisplayOder">
+                        <input type="number" class="form-control" required name="DisplayOder" ng-model="ProducCategory.DisplayOder">
+                        <span ng-show="frmaddproduct.DisplayOder.$invalid" style="color:red;"> Thứ tự hiển thị</span>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -92,7 +95,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="submit" class="btn btn-info">Lưu lại</button>
+                <button type="submit" ng-disabled="frmaddproduct.$invalid" class="btn btn-info">Lưu lại</button>
                 <button type="submit" ui-sref="productcategory" class="btn btn-default float-right">Hủy</button>
             </div>
             <!-- /.card-footer -->

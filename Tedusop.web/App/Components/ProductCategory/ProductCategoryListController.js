@@ -1,9 +1,9 @@
 ﻿(function (app) {
 
     app.controller('ProductCategoryListController', ProductCategoryListController)
-    ProductCategoryListController.$inject = ['$scope', 'apiService','notificationService'];
+    ProductCategoryListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
 
-    function ProductCategoryListController($scope, apiService, notificationService) {
+    function ProductCategoryListController($scope, apiService, notificationService, $ngBootbox) {
 
         $scope.productcategories = [];
         $scope.page = 0; /// phan trang
@@ -16,6 +16,26 @@
         function SeachPC() {
 
             getProductcategories();
+        }
+
+        //Xoa 1 san pham
+
+        $scope.deldeteproduct = deldeteproduct;
+
+        function deldeteproduct(id) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('api/product1/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    SeachPC();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
+            });
         }
 
         /// ket thúc tim kiem
