@@ -47,7 +47,7 @@
                 params: {
                     keyword: $scope.keyword,
                     page: page,
-                    pageSize: 5
+                    pageSize: 10
 
                 }
 
@@ -65,6 +65,7 @@
                 $scope.pageCount = result.data.TotalPage;
                 $scope.TotalCuont = result.data.TotalCuont;
 
+          
                 ///
 
             }, function () {
@@ -138,6 +139,20 @@
 
                 $scope.a = false;
             }
+        }
+
+        //sap xep gia tri table
+        $scope.sortColum = 'ID';
+        $scope.reverse = false;
+        $scope.sortData = function (column) {
+
+            if ($scope.sortColum == column)
+                $scope.reverse = !$scope.reverse;
+            else
+                $scope.reverse = false;
+
+            $scope.sortColum = column;
+
         }
 
 

@@ -1,4 +1,16 @@
-﻿<section class="content-header">
+﻿<style>
+
+
+    table thead tr {
+        
+        cursor:pointer;
+    
+    }
+
+
+</style>
+
+<section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -55,17 +67,17 @@
                                 <thead>
                                     <tr>
                                         <th><input name="all" type="checkbox" ng-click="selectAll()" /></th>
-                                        <th style="width: 10%;">ID</th>
-                                        <th style="width: 40%;">Tên Danh Mục</th>
-                                        <th style="width: 30%;">Ngày Tạo</th>
+                                        <th style="width: 10%;" ng-click="sortData('ID')">ID</th>
+                                        <th style="width: 40%;" ng-click="sortData('Name')">Tên Danh Mục</th>
+                                        <th style="width: 30%;" ng-click="sortData('CreatedDate')" >Ngày Tạo</th>
                                         <th style="width: 10%;">Trạng thái</th>
                                         <th style="width: 10%;">Thao tác</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="item in productcategories">
-                                        <td><input name="all" type="checkbox" ng-model="item.ckecked" /> </td>
+                                    <tr ng-repeat="item in productcategories | orderBy:sortColum:reverse">
+                                        <td><input name="all" type="checkbox" ng-model="item.ckecked" /></td>
                                         <td>{{item.ID}}</td>
                                         <td>{{item.Name}}</td>
                                         <td>

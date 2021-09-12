@@ -49,9 +49,35 @@ namespace Tedusop.web.infrastructure.extensions
             productCategory.MetaKeyword = productCategoryViewModel.MetaKeyword;
             productCategory.MetaDescription = productCategoryViewModel.MetaDescription;
             productCategory.Status = productCategoryViewModel.Status;
-            
+
+        }
+        public static void UpdateProduct(this Product product, ProductViewModel productViewModel)
+        {
+            product.Id = productViewModel.Id;
+            product.Name = productViewModel.Name;
+            product.Alias = productViewModel.Alias;
+            product.CategoryId = productViewModel.CategoryId;
+            product.Image = productViewModel.Image;
+            product.MoreImages = productViewModel.MoreImages;
+            product.Price = productViewModel.Price;
+            product.PromotionPrice = productViewModel.PromotionPrice;
+            product.Warranty = productViewModel.Warranty;
+            product.Description = productViewModel.Description;
+            product.Content = productViewModel.Content;
+            product.HomeFlang = productViewModel.HomeFlang;
+            product.HotFlang = productViewModel.HotFlang;
+
+            product.ViewCuont = productViewModel.ViewCuont;
 
 
+            product.CreatedDate = productViewModel.CreatedDate;
+            product.CreatedBy = productViewModel.CreatedBy;
+            product.UpdateBy = productViewModel.UpdateBy;
+            product.UpdatedDate = productViewModel.UpdatedDate;
+            product.MetaKeyword = productViewModel.MetaKeyword;
+            product.MetaDescription = productViewModel.MetaDescription;
+            product.Status = productViewModel.Status;
+        
 
 
         }

@@ -29,9 +29,6 @@ namespace Tedusop.web.Api
         }
 
 
-     
-
-
 
         [Route("getall")]
         [HttpGet]

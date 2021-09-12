@@ -2,9 +2,10 @@
 (function () {
     angular.module('tedushop',
         ['tedushop.productcategory',
-        'Tedushop.common']).config(config);
+            'product',
+            'Tedushop.common']).config(config);
 
-    config.$inject  = ['$stateProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('Home', {
