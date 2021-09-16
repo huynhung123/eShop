@@ -46,7 +46,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Từ khóa" ng-model="keyword" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <input type="text" class="form-control" placeholder="Từ khóa" ng-model="keyWord" aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" ng-click="SeachPC()" type="button" id="button-addon2">Tìm kiếm</button>
 
                         </div>
@@ -82,9 +82,9 @@
                                     <td><span ng-class="{'badge bg-danger': item.Status == true, 'badge bg-blue': item.Status == false  }">{{item.Status | statusfilters}}</span></td>
                                     <td>
 
-                                        <button class="btn btn-sm btn-primary" ui-sref="productcategoryedit({id:item.ID})"><i class="fa fa-paint-brush"></i></button>
+                                        <button class="btn btn-sm btn-primary" ui-sref="productEdit({id:item.ID})"><i class="fa fa-paint-brush"></i></button>
 
-                                        <button class="btn  btn-sm btn-danger" ng-click="deldeteproduct(item.ID)"><i class="fa fa-trash"></i></button>
+                                        <button class="btn  btn-sm btn-danger" ng-click="deldeteproduct(item.Id)"><i class="fa fa-trash"></i></button>
 
                                     </td>
                                 </tr>

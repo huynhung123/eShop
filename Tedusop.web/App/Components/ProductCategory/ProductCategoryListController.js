@@ -47,7 +47,7 @@
                 params: {
                     keyword: $scope.keyword,
                     page: page,
-                    pageSize: 10
+                    pageSize: 2
 
                 }
 
@@ -61,7 +61,7 @@
                     return notificationService.displayWarning('Không tìm thấy sản phẩm nào');
                 }
                 $scope.productcategories = result.data.Items;
-                $scope.page = result.data.page;
+                $scope.page = result.data.Page;
                 $scope.pageCount = result.data.TotalPage;
                 $scope.TotalCuont = result.data.TotalCuont;
 
@@ -114,7 +114,7 @@
             }
             else {
 
-                $('#btndelete').attr('disabled', 'disabled');
+                $('#btndelete').attr('disabled');
             }
 
         }, true);
@@ -127,7 +127,7 @@
                 angular.forEach($scope.productcategories, function (item) {
 
                     item.ckecked = true;
-                });
+                })
 
                 $scope.a = true;
             }
@@ -141,6 +141,11 @@
             }
         }
 
+     
+
+
+
+       
         //sap xep gia tri table
         $scope.sortColum = 'ID';
         $scope.reverse = false;
@@ -154,11 +159,7 @@
             $scope.sortColum = column;
 
         }
-
-
-
         $scope.getProductcategories();
-
     }
 
 
