@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn btn-primary" ui-sref="productadd" type="button" id="button-addon2">THÊM MỚI DANH MỤC</button>
+                        <button class="btn btn-primary" ui-sref="productadd" type="button" id="button-addon2">THÊM MỚI SẢN PHẨM</button>
                         <button class="btn btn-danger" ng-click="deleteMuti()" type="button" id="btndelete" disabled>Xóa</button>
                     </div>
 
@@ -72,9 +72,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="item in productcategories | orderBy:sortColum:reverse">
+                                <tr ng-repeat="item in product | orderBy:sortColum:reverse">
                                     <td><input name="all" type="checkbox" ng-model="item.ckecked" /></td>
-                                    <td>{{item.ID}}</td>
+                                    <td>{{item.Id}}</td>
                                     <td>{{item.Name}}</td>
                                     <td>
                                         {{item.CreatedDate | date:'dd/MM/yyyy hh:mm:ss'}}
@@ -105,7 +105,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <!--<page-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pageCount}}" total-count="{{TotalCuont}}" search-func="getProductcategories(page)"></page-directive>-->
+            <page-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pageCount}}" total-count="{{TotalCuont}}" search-func="getProduct(page)"></page-directive>
         </div>
         <!-- /.card-footer-->
     </div>

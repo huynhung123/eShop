@@ -43,7 +43,7 @@ namespace Tedusop.web.Api
                 var listCategory = _producCategoryService.GetMutip(keyword);
                 totalRow = listCategory.Count();
 
-                var query = listCategory.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+                var query = listCategory.OrderBy(x => x.ID).Skip(page * pageSize).Take(pageSize);
                 var listcategoryVm = Mapper.Map<List<ProductCategoryViewModel>>(query);
 
                 #region phantrang   

@@ -23,13 +23,26 @@ namespace Tedusop.web.Api
         // lay toan bo san pham
         [Route("getall")]
         [HttpGet]
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        public HttpResponseMessage Get(HttpRequestMessage request, int page, int pageSize = 3)
         {
             return CreateHttpResponse(request, () =>
             {
+                int totalRow = 0;
+                
                 var lisProduct = _productService.GetAll();
+                totalRow = lisProduct.Count();
+                var query = lisProduct.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
                 var lisProductVM = Mapper.Map<List<ProductViewModel>>(lisProduct);
-                HttpResponseMessage repose = request.CreateResponse(HttpStatusCode.OK, lisProductVM);
+
+                var paginationSet = new PaginationSet<ProductViewModel>()
+                {
+                    Items = lisProductVM,
+                    Page = page,
+                    TotalCuont = totalRow,
+                    TotalPage = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+
+                HttpResponseMessage repose = request.CreateResponse(HttpStatusCode.OK, paginationSet);
 
                 return repose;
             });

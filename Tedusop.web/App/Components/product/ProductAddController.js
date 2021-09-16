@@ -5,26 +5,34 @@
 
     app.controller('ProductAddController', ProductAddController)
 
-    ProductAddController.$inject=['$scope'];
+    ProductAddController.$inject = ['$scope'];
 
     function ProductAddController($scope) {
-        /// Chon anh Ckfinder
-     
 
+
+
+
+
+
+
+        /// Chon anh Ckfinder
         var product = {
             Image: null
         }
 
         $scope.product = product;
-       
+
         $scope.ChooseI = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
-                $scope.product.Image = fileUrl;
+                $scope.$apply(function () {
+                    $scope.product.Image = fileUrl;
+                });
+
             }
             finder.popup();
         }
-       
+
     }
 
 })(angular.module('product'));
