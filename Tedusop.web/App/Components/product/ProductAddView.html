@@ -46,26 +46,32 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tags</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Tags" ng-model="product.Tags">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Danh mục</label>
                     <div class="col-sm-10">
-                        <select name="parentId" class="form-control" required ng-model="product.CategoryId" ng-options="option.ID as option.Name for option in parentCategories">
+                        <select name="CategoryId" class="form-control"  ng-model="product.CategoryId" ng-options="option.ID as option.Name for option in parentCategories">
                             <option value="">Chọn Danh mục</option>
                         </select>
-                        <span ng-show="frmaddproduct.parentId.$invalid" style="color:red;"> Phải nhập chọn danh mục</span>
-                        <input type="hidden" name="parentId" ng-model="product.CategoryId" />
+                        <input type="hidden" name="CategoryId" required ng-model="product.CategoryId" />
+                        <span ng-show="frmaddproduct.CategoryId.$invalid" style="color:red;">Chọn Danh Mục</span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Giá</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" required name="Price" ng-model="product.Price" >
-                        <span ng-show="frmaddproduct.DisplayOder.$invalid" style="color:red;"> Nhập giá</span>
+                        <input type="number" class="form-control" required name="Price" ng-model="product.Price">
+                        <span ng-show="frmaddproduct.Price.$invalid" style="color:red;"> Nhập giá</span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Bảo hành</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" required name="Warranty" ng-model="product.Warranty">(tháng)
+                        <input type="number" class="form-control" name="Warranty" ng-model="product.Warranty">(tháng)
                     </div>
                 </div>
                 <div class="form-group row">
@@ -78,7 +84,7 @@
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Hình ảnh</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="Image" ng-model="product.Image">
-                        <button class="btn btn-default" ng-click="ChooseI()">CHọn ảnh</button>
+                        <button type="button" class="btn btn-default"  ng-click="ChooseI()">CHọn ảnh</button>
                     </div>
                 </div>
 

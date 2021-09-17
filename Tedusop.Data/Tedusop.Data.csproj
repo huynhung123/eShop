@@ -67,6 +67,10 @@
     <Compile Include="Migrations\202108281415145_drr.designer.cs">
       <DependentUpon>202108281415145_drr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109170849379_AddTags.cs" />
+    <Compile Include="Migrations\202109170849379_AddTags.designer.cs">
+      <DependentUpon>202109170849379_AddTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EurrorsRepository.cs" />
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108281415145_drr.resx">
       <DependentUpon>202108281415145_drr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109170849379_AddTags.resx">
+      <DependentUpon>202109170849379_AddTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

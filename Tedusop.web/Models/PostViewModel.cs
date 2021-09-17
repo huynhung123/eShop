@@ -32,6 +32,7 @@ namespace Tedusop.web.Models
         public int? ViewCount { set; get; }
 
        
+
         public virtual PostCategoryViewModel PostCategory { set; get; }
        
         public virtual IEnumerable<PostViewModel> PostTags { set; get; }

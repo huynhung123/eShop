@@ -77,8 +77,8 @@ namespace Tedusop.web.infrastructure.extensions
             product.MetaKeyword = productViewModel.MetaKeyword;
             product.MetaDescription = productViewModel.MetaDescription;
             product.Status = productViewModel.Status;
-        
 
+            product.Tags = productViewModel.Tags;
 
         }
     }
