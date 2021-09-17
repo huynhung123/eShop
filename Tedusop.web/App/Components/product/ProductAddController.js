@@ -30,7 +30,7 @@
         /// Laay danh sach parenId
         function LoadParent() {
 
-            apiService.get('api/product/getallparenID', null, function (result) {
+            apiService.get('api/product1/getallParents', null, function (result) {
                 $scope.parentCategories = result.data;
 
             }, function () {
