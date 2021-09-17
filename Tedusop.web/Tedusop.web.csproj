@@ -6385,7 +6385,9 @@
     <Content Include="UploadFile\images\3%282%29.jpg" />
     <Content Include="UploadFile\images\3%283%29.jpg" />
     <Content Include="UploadFile\images\3%284%29.jpg" />
+    <Content Include="UploadFile\images\3%285%29.jpg" />
     <Content Include="UploadFile\images\3.jpg" />
+    <Content Include="UploadFile\images\b3230c0e62ee94b0cdff.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

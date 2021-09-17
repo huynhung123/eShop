@@ -39,6 +39,7 @@ namespace Tedusop.web.Models
         public String MetaDescription { set; get; }
         public bool Status { set; get; }
 
+        public string Tags { set; get; }
         public virtual ProductCategoryViewModel ProductCategory { set; get; }
 
     }

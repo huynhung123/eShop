@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Tedusop.Data.Repositories;
 using Tedusop.Model.Models;
 using Tedusop.Data.Infrastructure;
-
+using Tedusop.Common;
 namespace Tedusop.Service
 {
     public interface IProductService
@@ -23,17 +23,49 @@ namespace Tedusop.Service
     }
     public class ProductService : IProductService
     {
-        IproductRepository _productRepository;
+        private IproductRepository _productRepository;
+        private ITagRepository _tagRepository;
+        private IProductTagRepository _productTagRepository;
         IUnitOfWord _uintOfWword;
-        public ProductService(IproductRepository productRepository, IUnitOfWord unitOfWord)
+        public ProductService(IproductRepository productRepository, ITagRepository tagRepository, IProductTagRepository productTagRepository, IUnitOfWord unitOfWord)
         {
             this._productRepository = productRepository;
+            this._productTagRepository = productTagRepository;
+            this._tagRepository = tagRepository;
+
+
             this._uintOfWword = unitOfWord;
-        
+
         }
 
         public Product Add(Product product)
         {
+            var productadd = _productRepository.Add(product);
+            _uintOfWword.Commit();
+
+            if (!String.IsNullOrEmpty(productadd.Tags))
+            {
+                String[] Tangsp = product.Tags.Split(',');
+                for (var i = 0; i < Tangsp.Length; i++)
+                {
+                    var tagID = StringHelper.ToUnsignString(Tangsp[i]);
+                    if (_tagRepository.Count(x => x.ID == tagID) == 0)
+                    {
+                        Tag tag = new Tag();
+                        tag.ID = tagID;
+                        tag.Name = Tangsp[i];
+                        tag.Type = CommonConstants.ProductTag;
+                        _tagRepository.Add(tag);
+                    }
+
+                    ProductTag productTag = new ProductTag();
+                    productTag.TagID = tagID;
+                    productTag.ProductID = product.Id;
+                    _productTagRepository.Add(productTag);
+                }
+            }
+
+
             return _productRepository.Add(product);
         }
 

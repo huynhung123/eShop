@@ -10,6 +10,7 @@ using AutoMapper;
 using Tedusop.web.Models;
 using Tedusop.Model.Models;
 using System.Web.Script.Serialization;
+using Tedusop.web.infrastructure.extensions;
 
 namespace Tedusop.web.Api
 {
@@ -127,6 +128,32 @@ namespace Tedusop.web.Api
 
         }
 
+        /// them san pham
+        [Route("Created")]
+        [HttpPost]
+        public HttpResponseMessage Post(HttpRequestMessage reques, ProductViewModel productVM)
+        {
+            return CreateHttpResponse(reques, () =>
+            {
+                HttpResponseMessage reponse = null;
+                if (!ModelState.IsValid)
+                {
+                    reponse = reques.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var product = new Product();
+                    product.UpdateProduct(productVM);
 
+                    _productService.Add(product);
+                    _productService.Save();
+
+                    var reponseData = Mapper.Map<Product, ProductViewModel>(product);
+                    reponse = reques.CreateResponse(HttpStatusCode.Created, reponseData);
+                }
+                return reponse;
+            });
+
+        }
     }
 }

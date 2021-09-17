@@ -33,6 +33,9 @@ namespace Tedusop.Model.Models
         public bool? HomeFlang { set; get; }
         public bool? HotFlang { set; get; }
         public int? ViewCuont { set; get; }
+
+        public String Tags { set; get; }
+
         [ForeignKey("CategoryId")]
         public virtual ProductCategory ProductCategory { set; get; }
     }

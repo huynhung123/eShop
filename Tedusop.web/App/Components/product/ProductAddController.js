@@ -16,10 +16,21 @@
             Status: true,
             HomeFlang: true,
             HotFlang: true
+          
         }
 
+        /// add san pham
+        $scope.frmProductAdd = frmProductAdd;
 
-
+        function frmProductAdd() {
+            apiService.post('api/product/Created', $scope.product,
+                function (result) {
+                    notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
+                    $state.go('product');
+                }, function (error) {
+                    notificationService.displayError('Thêm mới không thành công.');
+                });
+        }
 
         ///seoalias
 
@@ -30,7 +41,7 @@
         /// Laay danh sach parenId
         function LoadParent() {
 
-            apiService.get('api/product/getallparenID', null, function (result) {
+            apiService.get('api/product1/getallParents', null, function (result) {
                 $scope.parentCategories = result.data;
 
             }, function () {
