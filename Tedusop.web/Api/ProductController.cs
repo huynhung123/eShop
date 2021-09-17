@@ -49,6 +49,25 @@ namespace Tedusop.web.Api
                 return repose;
             });
         }
+        /// get all parenID
+        [Route("getallparenID")]
+        [HttpGet]
+
+        public HttpResponseMessage GetAllParenID(HttpRequestMessage reques)
+        {
+
+            return CreateHttpResponse(reques, () =>
+            {
+                HttpResponseMessage reponse = null;
+                var lisparenId = _productService.GetAll();
+                var lisparenIdVm = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(lisparenId);
+                reponse = reques.CreateResponse(HttpStatusCode.OK, lisparenIdVm);
+
+                return reponse;
+            });
+
+
+        }
 
 
         // xoa san pham

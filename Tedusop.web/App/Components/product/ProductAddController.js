@@ -5,23 +5,42 @@
 
     app.controller('ProductAddController', ProductAddController)
 
-    ProductAddController.$inject = ['$scope'];
+    ProductAddController.$inject = ['$scope', 'apiService', 'notificationService', '$state', 'commonService'];
 
-    function ProductAddController($scope) {
-
-
-
-
-
-
+    function ProductAddController($scope, apiService, notificationService, $state, commonService) {
 
         /// Chon anh Ckfinder
-        var product = {
-            Image: null
+        $scope.product = {
+
+            CreatedDate: new Date(),
+            Status: true,
+            HomeFlang: true,
+            HotFlang: true
         }
 
-        $scope.product = product;
 
+
+
+        ///seoalias
+
+        $scope.GetseoAlias = GetseoAlias;
+        function GetseoAlias() {
+            $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
+        }
+        /// Laay danh sach parenId
+        function LoadParent() {
+
+            apiService.get('api/product/getallparenID', null, function (result) {
+                $scope.parentCategories = result.data;
+
+            }, function () {
+                console.log('Cannot Pr');
+
+            })
+        }
+        LoadParent();
+
+        ////
         $scope.ChooseI = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
