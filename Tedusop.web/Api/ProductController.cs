@@ -155,5 +155,49 @@ namespace Tedusop.web.Api
             });
 
         }
+
+        // lay san pham theo ID
+        [Route("GetbyId/{id:int}")]
+        [HttpGet]
+
+        public HttpResponseMessage GetByID(HttpRequestMessage reques, int id) {
+            return CreateHttpResponse(reques, () => {
+                HttpResponseMessage response = null;
+                var producTD = _productService.GetById(id);
+                var productIDVM = Mapper.Map<Product, ProductViewModel>(producTD);
+                response = reques.CreateResponse(HttpStatusCode.OK, productIDVM);
+                return response;
+            });
+        }
+
+        /// Cpa nhat san pham
+        [Route("update")]
+        [HttpPut]
+        public HttpResponseMessage Update(HttpRequestMessage request, ProductViewModel productView)
+        {
+
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage reppnse = null;
+
+                if (!ModelState.IsValid)
+                {
+                    reppnse = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var productUD = _productService.GetById(productView.Id);
+                    productUD.UpdateProduct(productView);
+
+                    _productService.Update(productUD);
+                    _productService.Save();
+
+                    var responData = Mapper.Map<Product, ProductViewModel>(productUD);
+                    reppnse = request.CreateResponse(HttpStatusCode.Created, responData);
+                }
+
+                return reppnse;
+            });
+        }
     }
 }
