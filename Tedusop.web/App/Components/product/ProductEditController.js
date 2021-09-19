@@ -7,11 +7,12 @@
     ProductEditController.$inject = ['$scope', 'apiService', 'notificationService','$stateParams','$state', 'commonService']
     function ProductEditController($scope, apiService, notificationService, $stateParams, $state, commonService) {
         $scope.product = [];
-
+        $scope.MoreImages = [];
         // update san pham
         $scope.frmProductEdit = frmProductEdit;
 
         function frmProductEdit() {
+            $scope.product.MoreImages = JSON.stringify($scope.MoreImages)
             apiService.put('api/product/update', $scope.product,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được cap nhat.');
@@ -29,6 +30,7 @@
             apiService.get('api/product/GetbyId/' + $stateParams.id, null, function (result) {
 
                 $scope.product = result.data;
+                $scope.MoreImages = JSON.parse($scope.product.MoreImages);
 
             }, function (error) {
 
@@ -64,6 +66,16 @@
                     $scope.product.Image = fileUrl;
                 });
 
+            }
+            finder.popup();
+        }
+        ///chon nhieu anh
+        $scope.ChooseMoreImg = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.MoreImages.push(fileUrl);
+                })
             }
             finder.popup();
         }

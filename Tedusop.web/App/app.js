@@ -8,12 +8,23 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function config($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('Home', {
-            url: "/admin",
-            templateUrl: "/App/Components/Home/HomeView.html",
-            controller: "HomeController"
-        });
-        $urlRouterProvider.otherwise('/admin');
+        $stateProvider
+            .state('base', {
+                url: '',
+                templateUrl: '/App/shraed/View/baseView.html',
+                abstract: true
+            }).state('Login', {
+                url: "/login",
+                templateUrl: "/App/Components/Login/loginView.html",
+                controller: "loginController"
+            })
+            .state('Home', {
+                parent: 'base',
+                url: "/admin",
+                templateUrl: "/App/Components/Home/HomeView.html",
+                controller: "HomeController"
+            })
+        $urlRouterProvider.otherwise('admin');
     }
 
 })();

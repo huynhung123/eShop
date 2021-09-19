@@ -16,13 +16,14 @@
             Status: true,
             HomeFlang: true,
             HotFlang: true
-          
+
         }
 
         /// add san pham
         $scope.frmProductAdd = frmProductAdd;
 
         function frmProductAdd() {
+            $scope.product.MoreImages = JSON.stringify($scope.MoreImages)
             apiService.post('api/product/Created', $scope.product,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
@@ -62,7 +63,17 @@
             }
             finder.popup();
         }
-
+        ///chon nhieu anh
+        $scope.MoreImages = [];
+        $scope.ChooseMoreImg = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.MoreImages.push(fileUrl);
+                })
+            }
+            finder.popup();
+        }
     }
 
 })(angular.module('product'));

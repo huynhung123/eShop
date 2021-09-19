@@ -9,18 +9,21 @@
         $stateProvider
             .state('product', {
                 url: "/product",
+                parent: 'base',
                 templateUrl: "/App/Components/product/ProductListView.html",
                 controller: "ProductListController"
             })
             .state('productadd', {
                 url: '/productadd',
+                parent: 'base',
                 templateUrl: "/App/Components/product/ProductAddView.html",
                 controller: "ProductAddController"
             }).state('productEdit', {
-                    url: '/productEdit/:id',
-                    templateUrl: "/App/Components/product/ProductEditView.html",
-                    controller: "ProductEditController"
-                });
+                url: '/productEdit/:id',
+                parent: 'base',
+                templateUrl: "/App/Components/product/ProductEditView.html",
+                controller: "ProductEditController"
+            });
 
     }
 

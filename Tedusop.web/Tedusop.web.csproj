@@ -21,10 +21,13 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress>
     </Use64BitIISExpress>
-    <IISExpressSSLPort>44330</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <IISExpressSSLPort>44307</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>
+    </IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -218,6 +221,9 @@
     <Content Include="App\app.js" />
     <Content Include="App\Components\Home\HomeController.js" />
     <Content Include="App\Components\Home\HomeView.html" />
+    <Content Include="App\Components\Home\rootController.js" />
+    <Content Include="App\Components\Login\loginController.js" />
+    <Content Include="App\Components\Login\loginView.html" />
     <Content Include="App\Components\ProductCategory\ProductCategory.modules.js" />
     <Content Include="App\Components\ProductCategory\ProductCategoryAddController.js" />
     <Content Include="App\Components\ProductCategory\ProductCategoryAddView.html" />
@@ -239,6 +245,7 @@
     <Content Include="App\shraed\Service\apiService.js" />
     <Content Include="App\shraed\Service\CommonService.js" />
     <Content Include="App\shraed\Service\notificationService.js" />
+    <Content Include="App\shraed\View\baseView.html" />
     <Content Include="Assets\Admin\css\adminlte.css" />
     <Content Include="Assets\Admin\css\adminlte.min.css" />
     <Content Include="Assets\Admin\css\alt\adminlte.components.css" />
