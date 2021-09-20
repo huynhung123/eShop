@@ -66,7 +66,7 @@ namespace Tedusop.Service
             }
 
 
-            return _productRepository.Add(product);
+            return productadd;
         }
 
         public Product Delete(int id)

@@ -24,7 +24,7 @@
                 templateUrl: "/App/Components/Home/HomeView.html",
                 controller: "HomeController"
             })
-        $urlRouterProvider.otherwise('admin');
+        $urlRouterProvider.otherwise('/admin');
     }
 
 })();
