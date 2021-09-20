@@ -150,7 +150,19 @@
 
 
         ///end
+        //sap xep gia tri table
+        $scope.sortColum = 'Id';
+        $scope.reverse = false;
+        $scope.sortData = function (column) {
 
+            if ($scope.sortColum == column)
+                $scope.reverse = !$scope.reverse;
+            else
+                $scope.reverse = false;
+
+            $scope.sortColum = column;
+
+        }
         $scope.getProduct();
     }
 

@@ -34,7 +34,7 @@ namespace Tedusop.web.Api
 
                 var lisProduct = _productService.GetMutip(keyWord);
                 totalRow = lisProduct.Count();
-                var query = lisProduct.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+                var query = lisProduct.OrderBy(x => x.Id).Skip(page * pageSize).Take(pageSize);
                 var lisProductVM = Mapper.Map<List<ProductViewModel>>(query);
 
                 var paginationSet = new PaginationSet<ProductViewModel>()
