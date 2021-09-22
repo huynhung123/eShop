@@ -21,10 +21,13 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress>
     </Use64BitIISExpress>
-    <IISExpressSSLPort>44330</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <IISExpressSSLPort>44307</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>
+    </IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -208,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\productCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
@@ -261,7 +265,10 @@
     <Content Include="App\shraed\Filters\Status.filters.js" />
     <Content Include="App\shraed\modules\Tedushop.common.js" />
     <Content Include="App\shraed\Service\apiService.js" />
+    <Content Include="App\shraed\Service\authData.js" />
+    <Content Include="App\shraed\Service\authenticationService.js" />
     <Content Include="App\shraed\Service\CommonService.js" />
+    <Content Include="App\shraed\Service\loginService.js" />
     <Content Include="App\shraed\Service\notificationService.js" />
     <Content Include="App\shraed\View\baseView.html" />
     <Content Include="Assets\Admin\css\adminlte.css" />

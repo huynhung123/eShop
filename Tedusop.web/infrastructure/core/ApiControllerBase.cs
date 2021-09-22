@@ -15,7 +15,14 @@ namespace Tedusop.web.infrastructure.core
 
     public abstract class ApiControllerBase : ApiController
     {
-    protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requesMessage, Func<HttpResponseMessage> function)
+        private IEurrorsService _errorService;
+
+        public ApiControllerBase(IEurrorsService errorService)
+        {
+            this._errorService = errorService;
+        }
+
+        protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requesMessage, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;
             try
