@@ -95,7 +95,7 @@
             }
             apiService.del('api/product1/deletemulti', config, function (result) {
                 notificationService.displaySuccess('xoa thanh cong');
-                getProductcategories();
+                SeachPC()
             }, function (error) {
 
                 notificationService.displayError('xoa khong thanh cong');

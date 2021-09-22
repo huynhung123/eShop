@@ -139,7 +139,7 @@
             apiService.del('api/product/deleteMulti', config, function (result) {
 
                 notificationService.displaySuccess('xoa thanh cong')
-                getProduct();
+                SeachPC()
             }, function () {
 
                 notificationService.displayError('xoa khong thanh cong')

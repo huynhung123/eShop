@@ -101,6 +101,7 @@ namespace Tedusop.web.Api
 
         /// xoa nhieu san pham
         [Route("deleteMulti")]
+        [HttpDelete]
         public HttpResponseMessage DeleteMuti(HttpRequestMessage request, String chekProduct)
         {
             return CreateHttpResponse(request, () =>
