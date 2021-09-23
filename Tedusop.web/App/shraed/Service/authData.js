@@ -1,9 +1,6 @@
 ﻿(function (app) {
-
-    app.factory('authData', authData)
-    authData.$inject=['$scope']
-    function authData($scope) {
-
+    'use strict';
+    app.factory('authData', [function () {
         var authDataFactory = {};
 
         var authentication = {
@@ -11,7 +8,7 @@
             userName: ""
         };
         authDataFactory.authenticationData = authentication;
+
         return authDataFactory;
-    }
-    
+    }]);
 })(angular.module('Tedushop.common'));

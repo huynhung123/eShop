@@ -18,9 +18,11 @@ namespace Tedusop.web.Api
     public class ProductController : ApiControllerBase
     {
         private readonly IProductService _productService;
-        public ProductController(IProductService productService)
+        private IEurrorsService _errorService;
+        public ProductController(IProductService productService, IEurrorsService errorService) : base(errorService)
         {
             this._productService = productService;
+            this._errorService = errorService;
 
         }
         // lay toan bo san pham, tim kiem, phan trang

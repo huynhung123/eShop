@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using Microsoft.AspNet.Identity.EntityFramework;
 
+[assembly: OwinStartup(typeof(Tedusop.web.App_Start.Startup))]
+
 namespace Tedusop.web.App_Start
 {
     public partial class Startup

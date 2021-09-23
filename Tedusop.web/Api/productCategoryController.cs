@@ -21,10 +21,11 @@ namespace Tedusop.web.Api
     {
 
         private readonly IProducCategoryService _producCategoryService;
-
-        public productCategoryController(IProducCategoryService producCategoryService)
+        private IEurrorsService _errorService;
+        public productCategoryController(IProducCategoryService producCategoryService, IEurrorsService errorService) : base(errorService)
         {
             this._producCategoryService = producCategoryService;
+            this._errorService = errorService;
 
         }
 

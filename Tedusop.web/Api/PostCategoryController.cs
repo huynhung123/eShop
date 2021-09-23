@@ -19,11 +19,11 @@ namespace Tedusop.web.Api
     public class PostCategoryController : ApiControllerBase
     {
         IpostCategoryService _postCategoryService;
-
-        public PostCategoryController(IpostCategoryService postCategyService)
+        private IEurrorsService _errorService;
+        public PostCategoryController(IpostCategoryService postCategyService, IEurrorsService errorService) :base(errorService)
         {
             this._postCategoryService = postCategyService;
-
+            this._errorService = errorService;
         }
 
         [Route("getall")]
