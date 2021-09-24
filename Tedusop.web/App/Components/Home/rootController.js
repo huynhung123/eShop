@@ -3,7 +3,7 @@
     rootController.$inject = ['$scope', '$state']
     function rootController($scope, $state) {
         $scope.logout = function () {
-            $state.go('Login')
+            $state.go('login')
         }
       
     }

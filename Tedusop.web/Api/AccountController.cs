@@ -50,10 +50,10 @@ namespace Tedusop.web.Api
                 _userManager = value;
             }
         }
-
+        [Route("login")]
         [HttpPost]
         [AllowAnonymous]
-        [Route("login")]
+        
         public async Task<HttpResponseMessage> Login(HttpRequestMessage request, string userName, string password, bool rememberMe)
         {
             if (!ModelState.IsValid)

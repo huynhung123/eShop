@@ -8,14 +8,14 @@
         .config(configAuthentication);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
-
+   
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('base', {
                 url: '',
                 templateUrl: '/App/shraed/View/baseView.html',
                 abstract: true
-            }).state('Login', {
+            }).state('login', {
                 url: "/login",
                 templateUrl: "/App/Components/Login/loginView.html",
                 controller: "loginController"
@@ -26,7 +26,7 @@
                 templateUrl: "/App/Components/Home/HomeView.html",
                 controller: "HomeController"
             })
-        $urlRouterProvider.otherwise('/admin');
+        $urlRouterProvider.otherwise('/login');
 
     }
 

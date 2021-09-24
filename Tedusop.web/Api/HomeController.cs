@@ -18,8 +18,9 @@ namespace Tedusop.web.Api
         {
             this._eurrorsService = eurrorsService;
         }
-        [HttpGet]
         [Route("TestMethod")]
+        [HttpGet]
+       
         public String TestMethod()
         {
             return "helr tedu";

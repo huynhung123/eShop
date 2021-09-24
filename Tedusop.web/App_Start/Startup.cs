@@ -19,7 +19,6 @@ using System.Web;
 using Microsoft.Owin.Security.DataProtection;
 
 [assembly: OwinStartup(typeof(Tedusop.web.App_Start.Startup))]
-
 namespace Tedusop.web.App_Start
 {
     public partial class Startup
@@ -51,13 +50,9 @@ namespace Tedusop.web.App_Start
              .Where(t => t.Name.EndsWith("Service"))
              .AsImplementedInterfaces().InstancePerRequest();
 
-            /// ASP Identity
-            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
-            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
-            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
-            builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
-            builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
-            ///end
+           
+           
+        
 
             builder.RegisterType<UnitOfWork>().As<IUnitOfWord>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
@@ -65,8 +60,12 @@ namespace Tedusop.web.App_Start
             builder.RegisterType<EurrorsService>().As<IEurrorsService>().InstancePerRequest();
 
             builder.RegisterType<TeduShopDbContext>().AsSelf().InstancePerRequest();
-
-         
+            /// ASP Identity
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+            builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
 
             Autofac.IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

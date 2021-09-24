@@ -1,18 +1,14 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Tedusop.Data;
 using Tedusop.Model.Models;
-using Microsoft.Owin.Security.OAuth;
-using System.Threading.Tasks;
-using System.Security.Claims;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 [assembly: OwinStartup(typeof(Tedusop.web.App_Start.Startup))]
 
@@ -37,6 +33,7 @@ namespace Tedusop.web.App_Start
 
             });
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
