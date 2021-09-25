@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Tedusop.web.infrastructure.core;
 using Tedusop.Service;
+using Tedusop.web.infrastructure.core;
 
 namespace Tedusop.web.Api
 {
@@ -13,18 +13,17 @@ namespace Tedusop.web.Api
     [Authorize]
     public class HomeController : ApiControllerBase
     {
-        IEurrorsService _eurrorsService;
-        public HomeController(IEurrorsService eurrorsService) : base(eurrorsService)
+        private IEurrorsService _errorService;
+        public HomeController(IEurrorsService errorService) : base(errorService)
         {
-            this._eurrorsService = eurrorsService;
+            this._errorService = errorService;
         }
-        [Route("TestMethod")]
+
         [HttpGet]
-       
-        public String TestMethod()
+        [Route("TestMethod")]
+        public string TestMethod()
         {
-            return "helr tedu";
-        
+            return "Hello, TEDU Member. ";
         }
     }
 }

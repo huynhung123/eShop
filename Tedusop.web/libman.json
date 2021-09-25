@@ -32,7 +32,7 @@
       "destination": "Assets/Admin/libs/ng-ckeditor/"
     },
     {
-      "library": "angular-local-storage@0.7.1",
+      "library": "angular-local-storage@0.2.7",
       "destination": "Assets/Admin/libs/angular-local-storage/"
     },
     {
