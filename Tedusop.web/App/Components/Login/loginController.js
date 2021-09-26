@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../assets/admin/libs/angular.js/angular.js" />
+﻿
 
 (function (app) {
     app.controller('loginController', ['$scope', 'loginService', '$injector', 'notificationService',
@@ -11,12 +11,12 @@
 
             $scope.loginSubmit = function () {
                 loginService.login($scope.loginData.userName, $scope.loginData.password).then(function (response) {
-                    if (response != null && response.error != undefined) {
-                        notificationService.displayError("Đăng nhập không đúng.");
+                    if (response != null && response.data.error != undefined) {
+                        notificationService.displayError("dang nhap sai");
                     }
                     else {
                         var stateService = $injector.get('$state');
-                        stateService.go('home');
+                        stateService.go('Home');
                     }
                 });
             }

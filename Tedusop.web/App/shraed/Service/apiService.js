@@ -53,7 +53,7 @@
 
 
         //them moi san pham
-
+       
         function post(url, data, success, failure) {
             authenticationService.setHeader();
             $http.post(url, data).then(function (result) {
@@ -73,6 +73,7 @@
 
         // Get sn pham ra
         function get(url, params, success, failure) {
+
             authenticationService.setHeader();
             $http.get(url, params).then(function (result) {
 

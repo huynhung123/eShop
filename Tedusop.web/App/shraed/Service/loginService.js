@@ -1,8 +1,7 @@
 ﻿(function (app) {
     'use strict';
-    app.service('loginService', ['$http', '$q', 'authenticationService', 'authData',
-        function ($http, $q, authenticationService, authData) {
-
+    app.service('loginService', ['$http', '$q', 'authenticationService', 'authData','apiService',
+        function ($http, $q, authenticationService, authData,apiService ) {
             var userInfo;
             var deferred;
 
@@ -12,21 +11,22 @@
                 $http.post('/oauth/token', data, {
                     headers:
                         { 'Content-Type': 'application/x-www-form-urlencoded' }
-                }).success(function (response) {
+                }).then(function (response) {
                     userInfo = {
-                        accessToken: response.access_token,
+                        accessToken: response.data.access_token,
                         userName: userName
                     };
                     authenticationService.setTokenInfo(userInfo);
                     authData.authenticationData.IsAuthenticated = true;
                     authData.authenticationData.userName = userName;
+                    authData.authenticationData.accessToken = userInfo.accessToken;
+
                     deferred.resolve(null);
+                }, function (err, status) {
+                    authData.authenticationData.IsAuthenticated = false;
+                    authData.authenticationData.userName = "";
+                    deferred.resolve(err);
                 })
-                    .error(function (err, status) {
-                        authData.authenticationData.IsAuthenticated = false;
-                        authData.authenticationData.userName = "";
-                        deferred.resolve(err);
-                    });
                 return deferred.promise;
             }
 
@@ -36,4 +36,4 @@
                 authData.authenticationData.userName = "";
             }
         }]);
-})(angular.module('Tedushop.common'));
+})(angular.module('Tedushop.common')); 
