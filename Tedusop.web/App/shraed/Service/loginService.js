@@ -9,9 +9,10 @@
             this.login = function (userName, password) {
                 deferred = $q.defer();
                 var data = "grant_type=password&username=" + userName + "&password=" + password;
+
                 $http.post('/oauth/token', data, {
                     headers:
-                        { 'Content-Type': 'application/x-www-form-urlencoded' }
+                        { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' }
                 }).success(function (response) {
                     userInfo = {
                         accessToken: response.access_token,

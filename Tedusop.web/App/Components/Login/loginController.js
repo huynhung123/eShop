@@ -10,7 +10,8 @@
             };
 
             $scope.loginSubmit = function () {
-                loginService.login($scope.loginData.userName, $scope.loginData.password).then(function (response) {
+                loginService.login($scope.loginData.userName, $scope.loginData.password)
+                    .then(function (response) {
                     if (response != null && response.error != undefined) {
                         notificationService.displayError("Đăng nhập không đúng.");
                     }
