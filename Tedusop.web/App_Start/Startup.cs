@@ -36,36 +36,32 @@ namespace Tedusop.web.App_Start
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            builder.RegisterAssemblyTypes(typeof(PostCategoryRepository).Assembly)
-                .Where(t => t.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces().InstancePerRequest();
-            builder.RegisterAssemblyTypes(typeof(ProductCategoryRepository).Assembly)
-           .Where(t => t.Name.EndsWith("Repository"))
-           .AsImplementedInterfaces().InstancePerRequest();
-
-            builder.RegisterAssemblyTypes(typeof(PostCategoryService).Assembly)
-               .Where(t => t.Name.EndsWith("Service"))
-               .AsImplementedInterfaces().InstancePerRequest();
-            builder.RegisterAssemblyTypes(typeof(ProducCategoryService).Assembly)
-             .Where(t => t.Name.EndsWith("Service"))
-             .AsImplementedInterfaces().InstancePerRequest();
-
-           
-           
-        
-
             builder.RegisterType<UnitOfWork>().As<IUnitOfWord>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
-            builder.RegisterType<PostCategoryService>().As<IpostCategoryService>().InstancePerRequest();
-            builder.RegisterType<EurrorsService>().As<IEurrorsService>().InstancePerRequest();
-
             builder.RegisterType<TeduShopDbContext>().AsSelf().InstancePerRequest();
-            /// ASP Identity
+
             builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
             builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
             builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
             builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
+
+            builder.RegisterAssemblyTypes(typeof(PostCategoryRepository).Assembly)
+                .Where(t => t.Name.EndsWith("Repository"))
+                .AsImplementedInterfaces().InstancePerRequest();
+       
+
+            builder.RegisterAssemblyTypes(typeof(PostCategoryService).Assembly)
+               .Where(t => t.Name.EndsWith("Service"))
+               .AsImplementedInterfaces().InstancePerRequest();
+                    
+           
+        
+
+           
+           
+            /// ASP Identity
+           
 
             Autofac.IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

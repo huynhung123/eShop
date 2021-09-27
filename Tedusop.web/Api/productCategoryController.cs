@@ -17,6 +17,7 @@ using System.Web.Script.Serialization;
 namespace Tedusop.web.Api
 {
     [RoutePrefix("api/product1")]
+    [Authorize]
     public class productCategoryController : ApiControllerBase
     {
 
@@ -33,6 +34,7 @@ namespace Tedusop.web.Api
 
         [Route("getall")]
         [HttpGet]
+        [Authorize]
         // GET api/<controller>
         public HttpResponseMessage Get(HttpRequestMessage request, String keyword, int page, int pageSize = 20)
         {
@@ -67,6 +69,7 @@ namespace Tedusop.web.Api
 
         [Route("getallParents")]
         [HttpGet]
+        [Authorize]
         // GET api/<controller>
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
@@ -83,6 +86,7 @@ namespace Tedusop.web.Api
 
         [Route("Created")]
         [HttpPost]
+        [Authorize]
         public HttpResponseMessage Created(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
         {
 
@@ -115,6 +119,7 @@ namespace Tedusop.web.Api
 
         [Route("GetbyId/{id:int}")]
         [HttpGet]
+        [Authorize]
         // GET api/<controller>
         public HttpResponseMessage GetByID(HttpRequestMessage request,int id)
         {
@@ -132,6 +137,7 @@ namespace Tedusop.web.Api
 
         [Route("update")]
         [HttpPut]
+        [Authorize]
         public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryViewModel productCategoryViewModel)
         {
 
@@ -163,6 +169,7 @@ namespace Tedusop.web.Api
 
         [Route("delete")]
         [HttpDelete]
+        [Authorize]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
 
@@ -191,6 +198,7 @@ namespace Tedusop.web.Api
         /// xóa nhiều sản phẩm
         [Route("deletemulti")]
         [HttpDelete]
+        [Authorize]
         public HttpResponseMessage DeleteMuti(HttpRequestMessage request, String checkProduct)
         {
             return CreateHttpResponse(request, () => {

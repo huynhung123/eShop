@@ -124,8 +124,8 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="btn btn-sidebar"  style="color:aqua;" ng-click="logout()">Đăng xuất</a>
-                <span style="color:aquamarine">Hello! Huy</span>
+                <a href="#" class="btn btn-sidebar"  style="color:aqua;" ng-click="logOut()">Đăng xuất</a>
+                <span style="color:aquamarine">{{authentication.userName}}</span>
             </li>
 
             <!--<li class="dropdown user user-menu">
@@ -188,15 +188,15 @@
                     <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                     <li class="nav-item" style="cursor: pointer;">
-                        <a ui-sref="admin" class="nav-link">
+                        <a href="javascrip:void(0)" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 TRANG TRỦ
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
+                    <li style="cursor:pointer" class="nav-item">
+                        <a ui-sref="admin" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 SẢN PHẨM
@@ -216,12 +216,7 @@
                                     <p>SẢN PHẨM</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="../../index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
-                                </a>
-                            </li>
+                            
                         </ul>
                     </li>
 

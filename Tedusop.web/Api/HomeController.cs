@@ -21,6 +21,7 @@ namespace Tedusop.web.Api
 
         [HttpGet]
         [Route("TestMethod")]
+        [Authorize]
         public string TestMethod()
         {
             return "Hello, TEDU Member. ";
