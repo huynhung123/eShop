@@ -13,5 +13,19 @@ namespace Tedusop.web.Controllers
         {
             return View();
         }
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            return PartialView("footer");        
+        }
+        [ChildActionOnly]
+        public ActionResult Header()
+        {
+            return PartialView();
+        }
+        public ActionResult category()
+        {
+            return PartialView();
+        }
     }
 }
