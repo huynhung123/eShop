@@ -29,7 +29,7 @@ namespace Tedusop.web.Api
         // lay toan bo san pham, tim kiem, phan trang
         [Route("getall")]
         [HttpGet]
-        [Authorize]
+
         public HttpResponseMessage Get(HttpRequestMessage request, string keyWord, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
@@ -57,7 +57,7 @@ namespace Tedusop.web.Api
         /// get all parenID
         [Route("getallparenID")]
         [HttpGet]
-        [Authorize]
+
         public HttpResponseMessage GetAllParenID(HttpRequestMessage reques)
         {
 
@@ -78,7 +78,7 @@ namespace Tedusop.web.Api
         // xoa san pham
         [Route("delete")]
         [HttpDelete]
-        [Authorize]
+
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return CreateHttpResponse(request, () =>
@@ -107,7 +107,7 @@ namespace Tedusop.web.Api
         /// xoa nhieu san pham
         [Route("deleteMulti")]
         [HttpDelete]
-        [Authorize]
+
         public HttpResponseMessage DeleteMuti(HttpRequestMessage request, String chekProduct)
         {
             return CreateHttpResponse(request, () =>
@@ -138,7 +138,7 @@ namespace Tedusop.web.Api
         /// them san pham
         [Route("Created")]
         [HttpPost]
-        [Authorize]
+
         public HttpResponseMessage Post(HttpRequestMessage reques, ProductViewModel productVM)
         {
             return CreateHttpResponse(reques, () =>
@@ -167,9 +167,11 @@ namespace Tedusop.web.Api
         // lay san pham theo ID
         [Route("GetbyId/{id:int}")]
         [HttpGet]
-        [Authorize]
-        public HttpResponseMessage GetByID(HttpRequestMessage reques, int id) {
-            return CreateHttpResponse(reques, () => {
+
+        public HttpResponseMessage GetByID(HttpRequestMessage reques, int id)
+        {
+            return CreateHttpResponse(reques, () =>
+            {
                 HttpResponseMessage response = null;
                 var producTD = _productService.GetById(id);
                 var productIDVM = Mapper.Map<Product, ProductViewModel>(producTD);
@@ -181,7 +183,7 @@ namespace Tedusop.web.Api
         /// Cpa nhat san pham
         [Route("update")]
         [HttpPut]
-        [Authorize]
+
         public HttpResponseMessage Update(HttpRequestMessage request, ProductViewModel productView)
         {
 
