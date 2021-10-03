@@ -52,7 +52,7 @@
         }
         LoadParent();
 
-        ////
+        //// chọn ảnh
         $scope.ChooseI = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {

@@ -8,6 +8,7 @@
             this.login = function (userName, password) {
                 deferred = $q.defer();
                 var data = "grant_type=password&username=" + userName + "&password=" + password;
+
                 $http.post('/oauth/token', data, {
                     headers:
                         { 'Content-Type': 'application/x-www-form-urlencoded' }
