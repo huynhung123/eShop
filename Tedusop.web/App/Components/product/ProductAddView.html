@@ -91,7 +91,7 @@
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Hình ảnh thêm</label>
                     <div class="col-sm-10">
                       <ul style="list-style:none;">
-                          <li ng-repeat="item in MoreImages"><img src="{{item}}" width="40" /></li>
+                          <li ng-repeat="item in MoreImages"><img ng-src="{{item}}" width="40" /></li>
                       </ul>
                         <button type="button" class="btn btn-default" ng-click="ChooseMoreImg()">CHọn ảnh</button>
                     </div>
