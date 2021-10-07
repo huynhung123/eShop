@@ -39,8 +39,8 @@ namespace Tedusop.web.Controllers
         }
         public ActionResult category()
         {
-            var model = _producCategoryService.GetAll();
-            var listCategory = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            var mode = _producCategoryService.GetAll();
+            var listCategory = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(mode);
             return PartialView(listCategory);
         }
     }
