@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EurrorsService.cs" />
+    <Compile Include="FooterService.cs" />
     <Compile Include="PostCategoryService.cs" />
     <Compile Include="PostService.cs" />
     <Compile Include="ProducCategoryService.cs" />

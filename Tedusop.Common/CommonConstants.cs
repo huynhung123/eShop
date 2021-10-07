@@ -10,5 +10,6 @@ namespace Tedusop.Common
     {
         public const string ProductTag = "product";
         public const String PosTag = "post";
+        public const String Defalsefooter = "defalse";
     }
 }

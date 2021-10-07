@@ -228,6 +228,7 @@
     <Compile Include="infrastructure\core\PaginationSet.cs" />
     <Compile Include="infrastructure\extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\FooterViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
@@ -6562,7 +6563,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\shared\Layouts.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\shared\footer.cshtml" />
+    <Content Include="Views\shared\Footer.cshtml" />
     <Content Include="Views\shared\Header.cshtml" />
     <Content Include="Views\shared\category.cshtml" />
   </ItemGroup>

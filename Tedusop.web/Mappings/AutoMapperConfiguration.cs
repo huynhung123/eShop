@@ -20,6 +20,7 @@ namespace Tedusop.web.Mappings
             Mapper.CreateMap<Product, ProductViewModel>();
             Mapper.CreateMap<ProductTag, ProductTagViewModel>();
             Mapper.CreateMap<ProductCategory, ProductCategoryViewModel>();
+            Mapper.CreateMap<Footer, FooterViewModel>();
 
         }
     }

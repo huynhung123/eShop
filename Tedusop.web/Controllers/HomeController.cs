@@ -13,11 +13,12 @@ namespace Tedusop.web.Controllers
     public class HomeController : Controller
     {
         IProducCategoryService _producCategoryService;
-
-        public HomeController(IProducCategoryService producCategoryService)
+        IFooterService _footerService;
+        public HomeController(IProducCategoryService producCategoryService, IFooterService footerSerVice)
         {
 
             this._producCategoryService = producCategoryService;
+            this._footerService = footerSerVice;
         }
         // GET: Admin
         public ActionResult Index()
@@ -27,7 +28,9 @@ namespace Tedusop.web.Controllers
         [ChildActionOnly]
         public ActionResult Footer()
         {
-            return PartialView("footer");        
+            var modelFooter = _footerService.getFooter();
+            var footerDefalse = Mapper.Map<Footer, FooterViewModel>(modelFooter);
+            return PartialView(footerDefalse);        
         }
         [ChildActionOnly]
         public ActionResult Header()
