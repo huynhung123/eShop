@@ -6,7 +6,7 @@
         <ul class="menu">
             @foreach (var category in Model.Where(x => x.parentID == null))
             {
-                var url = "/" + category.Alias + ".PC" + category.ID + ".htm";
+                var url = "/" + category.Alias + ".PC-" + category.ID + ".html";
                 var childCategory = Model.Where(x => x.parentID == category.ID);
             <li>
 
@@ -65,5 +65,5 @@
             <h6><a href="single.html">Lorem ipsum dolor</a></h6>
         </div>
     </div>
-    <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a>
+    <a class="view-all all-product" href="product.html">XEM TẤT CẢ<span> </span></a>
 </div>

@@ -16,6 +16,8 @@ namespace Tedusop.Service
         Product Delete(int id);
         IEnumerable<Product> GetAll();
         IEnumerable<Product> GetMutip(String keyWord);
+        IEnumerable<Product> GetLastertProduct(int Top);
+        IEnumerable<Product> HotlasterProduct(int Top);
         Product GetById(int id);
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
         IEnumerable<Product> GetAllByTagPaging(String Tag, int page, int pageSize, out int totalRow);
@@ -94,12 +96,22 @@ namespace Tedusop.Service
             return _productRepository.GetSingleById(id);
         }
 
+        public IEnumerable<Product> GetLastertProduct(int Top)
+        {
+            return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(3);
+        }
+
         public IEnumerable<Product> GetMutip(string keyWord)
         {
             if (!String.IsNullOrEmpty(keyWord))
                 return _productRepository.GetMulti(x => x.Name.Contains(keyWord) || x.Description.Contains(keyWord));
             else
                 return _productRepository.GetAll();
+        }
+
+        public IEnumerable<Product> HotlasterProduct(int Top)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.HotFlang == true).OrderByDescending(x => x.CreatedDate).Take(3);
         }
 
         public void Save()

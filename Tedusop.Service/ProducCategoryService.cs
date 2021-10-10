@@ -19,6 +19,7 @@ namespace Tedusop.Service
         IEnumerable<ProductCategory> GetMutip(String Keyword);
         ProductCategory GetByid(int id);
         IEnumerable<ProductCategory> GetAllPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<ProductCategory> GetAllMenu();
         IEnumerable<ProductCategory> GetAllByTagPaging(String tag, int page, int pageSize, out int totalRow);
         void save();
     }
@@ -78,6 +79,11 @@ namespace Tedusop.Service
         public void Update(ProductCategory post)
         {
             _productCategoryRepository.Update(post);
+        }
+
+        public IEnumerable<ProductCategory> GetAllMenu()
+        {
+            return _productCategoryRepository.GetMulti(x => x.Status && x.HomeFlang == true);
         }
     }
 }

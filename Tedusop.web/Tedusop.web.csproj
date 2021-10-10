@@ -229,12 +229,14 @@
     <Compile Include="infrastructure\extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\FooterViewModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
     <Compile Include="Models\ProductCategoryViewModel.cs" />
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\SlideViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -6479,13 +6481,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Libs\CKFinder.dll" />
-    <Content Include="UploadFile\images\3%281%29.jpg" />
-    <Content Include="UploadFile\images\3%282%29.jpg" />
-    <Content Include="UploadFile\images\3%283%29.jpg" />
-    <Content Include="UploadFile\images\3%284%29.jpg" />
-    <Content Include="UploadFile\images\3%285%29.jpg" />
-    <Content Include="UploadFile\images\3.jpg" />
-    <Content Include="UploadFile\images\b3230c0e62ee94b0cdff.jpg" />
+    <Content Include="UploadFile\images\ba.jpg" />
+    <Content Include="UploadFile\images\ch.jpg" />
+    <Content Include="UploadFile\images\pi.jpg" />
+    <Content Include="UploadFile\images\pi3.jpg" />
+    <Content Include="UploadFile\images\pi4.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -81,6 +81,10 @@
     <Compile Include="Migrations\202109210409258_Identity.designer.cs">
       <DependentUpon>202109210409258_Identity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110081422544_addSlide.cs" />
+    <Compile Include="Migrations\202110081422544_addSlide.designer.cs">
+      <DependentUpon>202110081422544_addSlide.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EurrorsRepository.cs" />
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109210409258_Identity.resx">
       <DependentUpon>202109210409258_Identity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110081422544_addSlide.resx">
+      <DependentUpon>202110081422544_addSlide.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
