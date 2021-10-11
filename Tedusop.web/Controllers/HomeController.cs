@@ -24,6 +24,7 @@ namespace Tedusop.web.Controllers
         }
         // GET: Admin
         public ActionResult Index()
+        
         {
             var modelslide = _footerService.GetSlide();
             var slideDfalse = Mapper.Map<IEnumerable<Slide>, IEnumerable<SlideViewModel>>(modelslide);
