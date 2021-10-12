@@ -6503,7 +6503,6 @@
     <Folder Include="App\Components\oders\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\About\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Post\" />
     <Folder Include="Views\Product\" />
@@ -6575,6 +6574,7 @@
     <Content Include="Views\shared\Footer.cshtml" />
     <Content Include="Views\shared\Header.cshtml" />
     <Content Include="Views\shared\category.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tedusop.Common\Tedusop.Common.csproj">
