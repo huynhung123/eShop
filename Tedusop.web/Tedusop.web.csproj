@@ -6506,7 +6506,6 @@
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Post\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -6575,6 +6574,7 @@
     <Content Include="Views\shared\Footer.cshtml" />
     <Content Include="Views\shared\Header.cshtml" />
     <Content Include="Views\shared\category.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tedusop.Common\Tedusop.Common.csproj">

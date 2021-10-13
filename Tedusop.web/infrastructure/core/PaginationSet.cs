@@ -18,6 +18,8 @@ namespace Tedusop.web.infrastructure.core
         }
         public int TotalPage { get; set; }
         public int TotalCuont { get; set; }
+        public int MaxPage { set; get; }
+
         public IEnumerable<T> Items { get; set; }
     }
 }

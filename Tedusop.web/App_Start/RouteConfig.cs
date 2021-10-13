@@ -29,13 +29,13 @@ namespace Tedusop.web
 
             routes.MapRoute(
               name: "Product Category",
-              url: "{alias}.PC-/{id}.html",
+              url: "{alias}.PC-{id}.html",
               defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                namespaces: new string[] { "Tedusop.web.Controllers" }
           );
             routes.MapRoute(
              name: "Product",
-             url: "{alias}.PC-/{id}.html",
+             url: "{alias}.P-{id}.html",
              defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
               namespaces: new string[] { "Tedusop.web.Controllers" }
          );

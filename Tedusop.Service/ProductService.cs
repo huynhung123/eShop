@@ -21,6 +21,7 @@ namespace Tedusop.Service
         Product GetById(int id);
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
         IEnumerable<Product> GetAllByTagPaging(String Tag, int page, int pageSize, out int totalRow);
+        IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow);
         void Save();
     }
     public class ProductService : IProductService
@@ -99,6 +100,15 @@ namespace Tedusop.Service
         public IEnumerable<Product> GetLastertProduct(int Top)
         {
             return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(3);
+        }
+
+        public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow)
+        {
+            var query = _productRepository.GetMulti(x => x.Status).OrderBy(x=>x.CategoryId==categoryId);
+
+            totalRow = query.Count();
+
+            return query.Skip((page - 1) * pageSize).Take(pageSize).ToList();
         }
 
         public IEnumerable<Product> GetMutip(string keyWord)
