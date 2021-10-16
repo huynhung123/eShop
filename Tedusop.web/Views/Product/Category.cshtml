@@ -10,14 +10,25 @@
     {
         <div class=" w_content">
             <div class="women">
-                <a href="@(category.Alias).PC-@(category.ID).html"><h4>@category.Name<span>@Model.TotalCuont San pham</span> </h4></a>
+                <a href="@(category.Alias).PC-@(category.ID).html"><h4>@category.Name: <span> @Model.TotalCuont Sản Phẩm</span> </h4></a>
                 <ul class="w_nav">
-                    <li>Sort : </li>
-                    <li><a class="active" href="#">popular</a></li> |
-                    <li><a href="#">new </a></li> |
-                    <li><a href="#">discount</a></li> |
-                    <li><a href="#">price: Low High </a></li>
-                    <div class="clearfix"> </div>
+                    <li>Sắp xếp : </li>
+                    <li><a class="active" href="?page=@Model.Page&sort=popular">Phổ biến</a></li> |
+                    <li><a href="?page=@Model.Page&sort=new">Mới </a></li> |
+                    @foreach (var product in Model.Items)
+                    {
+                        if (product.PromotionPrice.HasValue)
+                        {
+
+                            <li><a href="?page=@Model.Page&sort=discount">Khuyến Mại|</a></li>
+
+                        }
+
+                       
+                    }
+                    
+                    <li><a href="?page=@Model.Page&sort=price">Giá: Thấp - Cao </a></li>
+                    <div class="clearfix"></div>
                 </ul>
                 <div class="clearfix"> </div>
             </div>
@@ -33,7 +44,7 @@
                             <div class="left-grid-view grid-view-left">
                                 <img src="@product.Image" class="img-responsive watch-right" alt="" />
                                 <div class="mask">
-                                    <div class="info">Quick View</div>
+                                    <div class="info">Xem nhanh</div>
                                 </div>
                             </div>
                         </a>
@@ -95,9 +106,12 @@
                         </ul>
                     </nav>
                 }
-</div>
+            </nav>
+        </div>
+
     }
-    else { 
+    else
+    {
         <div class="text-center">Không tồn tại sản phẩm nào</div>
     }
 </div>

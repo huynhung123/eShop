@@ -41,6 +41,12 @@ namespace Tedusop.web
          );
 
             routes.MapRoute(
+               name: "trangchu",
+               url: "trang-chu.html",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+               namespaces: new string[] { "Tedusop.web.Controllers" }
+           );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
