@@ -42,6 +42,10 @@
     {
       "library": "font-awesome@4.6.3",
       "destination": "Assets/Client/font-awesome/"
+    },
+    {
+      "library": "jqueryui@1.11.4",
+      "destination": "Assets/Client/jqueryui/"
     }
   ]
 }

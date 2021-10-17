@@ -79,6 +79,7 @@ namespace Tedusop.web.infrastructure.extensions
             product.Status = productViewModel.Status;
 
             product.Tags = productViewModel.Tags;
+            product.Quantity = productViewModel.Quantity;
 
         }
     }

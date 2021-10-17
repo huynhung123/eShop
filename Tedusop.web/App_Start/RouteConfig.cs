@@ -26,7 +26,12 @@ namespace Tedusop.web
             defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
              namespaces: new string[] { "Tedusop.web.Controllers" }
         );
-
+            routes.MapRoute(
+             name: "seach",
+             url: "tim-kiem.html",
+             defaults: new { controller = "Product", action = "Seach", id = UrlParameter.Optional },
+              namespaces: new string[] { "Tedusop.web.Controllers" }
+         );
             routes.MapRoute(
               name: "Product Category",
               url: "{alias}.PC-{id}.html",

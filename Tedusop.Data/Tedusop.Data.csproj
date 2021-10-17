@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202110081422544_addSlide.designer.cs">
       <DependentUpon>202110081422544_addSlide.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110171805216_addQuantity.cs" />
+    <Compile Include="Migrations\202110171805216_addQuantity.designer.cs">
+      <DependentUpon>202110171805216_addQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EurrorsRepository.cs" />
@@ -136,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110081422544_addSlide.resx">
       <DependentUpon>202110081422544_addSlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110171805216_addQuantity.resx">
+      <DependentUpon>202110171805216_addQuantity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

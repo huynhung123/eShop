@@ -22,6 +22,9 @@ namespace Tedusop.Service
         IEnumerable<Product> GetAllPaging(int page, int pageSize, out int totalRow);
         IEnumerable<Product> GetAllByTagPaging(String Tag, int page, int pageSize, out int totalRow);
         IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, String sort, out int totalRow);
+        IEnumerable<Product> Seach( String keyword, int page, int pageSize, String sort, out int totalRow);
+        IEnumerable<String> GetListProductByName(String name);
+        IEnumerable<Product> GetReadtedProducts(int id,int top);
         void Save();
     }
     public class ProductService : IProductService
@@ -128,12 +131,23 @@ namespace Tedusop.Service
             return query.Skip((page - 1) * pageSize).Take(pageSize);
         }
 
+        public IEnumerable<String> GetListProductByName(string name)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.Name.Contains(name)).Select(y=>y.Name);
+        }
+
         public IEnumerable<Product> GetMutip(string keyWord)
         {
             if (!String.IsNullOrEmpty(keyWord))
                 return _productRepository.GetMulti(x => x.Name.Contains(keyWord) || x.Description.Contains(keyWord));
             else
                 return _productRepository.GetAll();
+        }
+
+        public IEnumerable<Product> GetReadtedProducts(int id, int top)
+        {
+            var product = _productRepository.GetSingleById(id);
+            return _productRepository.GetMulti(x => x.Status && x.Id != id && x.CategoryId == product.CategoryId).OrderByDescending(y=>y.CreatedDate).Take(top);
         }
 
         public IEnumerable<Product> HotlasterProduct(int Top)
@@ -144,6 +158,32 @@ namespace Tedusop.Service
         public void Save()
         {
             _uintOfWword.Commit();
+        }
+
+        public IEnumerable<Product> Seach(string keyword, int page, int pageSize, string sort, out int totalRow)
+        {
+            var query = _productRepository.GetMulti(x => x.Status && x.Name.Contains(keyword));
+            switch (sort)
+            {
+                case "new":
+                    query = query.OrderByDescending(x => x.CreatedDate);
+                    break;
+                case "popular":
+                    query = query.OrderByDescending(x => x.ViewCuont);
+                    break;
+                case "discount":
+                    query = query.OrderByDescending(x => x.PromotionPrice.HasValue);
+                    break;
+                case "price":
+                    query = query.OrderBy(x => x.Price);
+                    break;
+                default:
+                    query = query.OrderByDescending(x => x.CreatedDate);
+                    break;
+            }
+            totalRow = query.Count();
+
+            return query.Skip((page - 1) * pageSize).Take(pageSize);
         }
 
         public void Update(Product product)

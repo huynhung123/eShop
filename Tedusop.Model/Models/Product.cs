@@ -35,6 +35,7 @@ namespace Tedusop.Model.Models
         public int? ViewCuont { set; get; }
 
         public String Tags { set; get; }
+        public int Quantity { set; get; }
 
         [ForeignKey("CategoryId")]
         public virtual ProductCategory ProductCategory { set; get; }

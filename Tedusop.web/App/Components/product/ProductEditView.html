@@ -69,6 +69,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Số lượng</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" required name="Quantity" ng-model="product.Quantity">
+                        <span ng-show="frmaddproduct.Quantity.$invalid" style="color:red;"> Nhập số lượng</span>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Bảo hành</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="Warranty" ng-model="product.Warranty">(tháng)
