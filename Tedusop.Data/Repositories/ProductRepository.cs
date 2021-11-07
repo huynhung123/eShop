@@ -9,7 +9,7 @@ using Tedusop.Data.Infrastructure;
 namespace Tedusop.Data.Repositories
 {
     public interface IproductRepository : IRepository<Product>{ }
-    public  class ProductRepository : RepositoryBase<Product>,IproductRepository
+    public  class ProductRepository : RepositoryBase<Product>, IproductRepository
     {
         public ProductRepository(IDbFactory dbFactory) : base(dbFactory) { }
     }

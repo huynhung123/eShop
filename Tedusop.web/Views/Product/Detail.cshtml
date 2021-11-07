@@ -89,6 +89,17 @@
             <h6>Số lượng: @Model.Quantity Sản phẩm</h6>
             <h4 class="m_3">Mô tả:</h4>
             <p>@Model.Description</p>
+            <div class="tag">
+                <h5>Tags :</h5>
+                <ul class="tagList">
+                    @foreach (var tag in (IEnumerable<Tedusop.web.Models.TagViewModel>)ViewBag.Tags)
+                    {
+                        <li><a href="/tag/@(tag.ID).html">@(tag.Name), </a></li>
+                    }
+
+                </ul>
+            </div>
+            <div class="clearfix"></div>
             <div class="share">
                 <h5>Share Product :</h5>
                 <ul class="share_nav">
@@ -98,8 +109,6 @@
                     <li><a href="#"><img src="/Assets/Client/images/gpluse.png" title="Google+"></a></li>
                 </ul>
             </div>
-
-
         </div>
         <div class="clearfix"> </div>
     </div>

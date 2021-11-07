@@ -44,6 +44,12 @@ namespace Tedusop.web
              defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
               namespaces: new string[] { "Tedusop.web.Controllers" }
          );
+            routes.MapRoute(
+             name: "ListByTag",
+             url: "tag/{tagId}.html",
+             defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },
+              namespaces: new string[] { "Tedusop.web.Controllers" }
+         );
 
             routes.MapRoute(
                name: "trangchu",

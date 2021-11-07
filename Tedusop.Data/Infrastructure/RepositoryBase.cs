@@ -134,6 +134,9 @@ namespace Tedusop.Data.Infrastructure
             return dataContext.Set<T>().Count<T>(predicate) > 0;
         }
 
-        
+        public T GetSingle(string key)
+        {
+            return dbSet.Find(key);
+        }
     }
 }

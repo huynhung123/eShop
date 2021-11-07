@@ -6422,6 +6422,7 @@
     <Content Include="Assets\Admin\libs\toastr.js\js\toastr.js" />
     <Content Include="Assets\Admin\libs\toastr.js\js\toastr.min.js" />
     <Content Include="Assets\Client\css\bootstrap.css" />
+    <Content Include="Assets\Client\css\custom.css" />
     <Content Include="Assets\Client\css\etalage.css" />
     <Content Include="Assets\Client\css\form.css" />
     <Content Include="Assets\Client\css\style.css" />
@@ -7048,6 +7049,7 @@
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Product\Seach.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\ListByTag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tedusop.Common\Tedusop.Common.csproj">

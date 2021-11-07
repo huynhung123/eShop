@@ -30,7 +30,7 @@ namespace Tedusop.web.Controllers
             var productReated = _productService.GetReadtedProducts(id, 6);
             ViewBag.productReated = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productReated);
 
-           
+            ViewBag.Tags = Mapper.Map<IEnumerable<Tag>, IEnumerable<TagViewModel>>(_productService.GetListTagByProductId(id));
             List<String> listImg = new JavaScriptSerializer().Deserialize<List<String>>(ProductViewModel.MoreImages);
             ViewBag.moreIMG = listImg;
             return View(ProductViewModel);
@@ -45,7 +45,7 @@ namespace Tedusop.web.Controllers
             int totalPage = (int)Math.Ceiling((double)totalRow / pageSize);
             var category = _productCategoryService.GetByid(id);
             ViewBag.category = Mapper.Map<ProductCategory, ProductCategoryViewModel>(category);
-
+           
             var PaginationSet = new PaginationSet<ProductViewModel>()
             {
                 Items = productViewModel,
@@ -76,6 +76,28 @@ namespace Tedusop.web.Controllers
                 TotalPage = totalPage
             };
             return View(PaginationSet);
+        }
+        public ActionResult ListByTag(String tagId, int page = 1)
+        {
+            int pageSize = int.Parse(ConfigHelper.GetByKey("pageSize"));
+            int totalRow = 0;
+
+            var productModel = _productService.GetListProductByTag(tagId, page, pageSize, out totalRow);
+            var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productModel);
+            int totalPage = (int)Math.Ceiling((double)totalRow / pageSize);
+
+            ViewBag.Tag = Mapper.Map<Tag, TagViewModel>(_productService.getTag(tagId));
+
+            var PaginationSet = new PaginationSet<ProductViewModel>()
+            {
+                Items = productViewModel,
+                MaxPage = int.Parse(ConfigHelper.GetByKey("MaxPage")),
+                Page = page,
+                TotalCuont = totalRow,
+                TotalPage = totalPage
+            };
+            return View(PaginationSet);
+
         }
         public JsonResult GetListProductByName(String name)
         {

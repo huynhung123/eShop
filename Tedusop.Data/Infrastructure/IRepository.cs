@@ -13,6 +13,8 @@ namespace Tedusop.Data.Infrastructure
         void Update(T entity);
         T Delete(T entity);
         T Delete(int id);
+
+
               // xoa nhieu ban ghi
         void DeleteMulti(Expression<Func<T, bool>>where);
 
@@ -21,6 +23,7 @@ namespace Tedusop.Data.Infrastructure
         T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null);
         IQueryable<T> GetAll(string[] includes = null);
         T GetSingleById(int id);
+        T GetSingle(String key);
         IQueryable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null);
 
         IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null);

@@ -39,5 +39,6 @@ namespace Tedusop.Model.Models
 
         [ForeignKey("CategoryId")]
         public virtual ProductCategory ProductCategory { set; get; }
+        public virtual IEnumerable<ProductTag> Productag { set; get; }
     }
 }
